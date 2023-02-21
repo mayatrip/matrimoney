@@ -11,8 +11,13 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/budget">Budget</Link> | <Link to="/funds">Funds</Link>
+        <div>
+          <Link to="/">Home</Link>
+        </div>
+        <div id="nav-right">
+          <Link to="/budget" className="nav-link">Budget</Link>
+          <Link to="/funds" className="nav-link">Funds</Link>
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<HomeView />} />

@@ -2,18 +2,19 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* nav bar */
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: left;
+  margin: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+#nav-right {
+  justify-self: right;
+}
+
+.nav-link {
+  margin-left: 20px;
 }
 
