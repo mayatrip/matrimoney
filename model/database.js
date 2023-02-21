@@ -1,5 +1,6 @@
-require("dotenv").config();
-const mysql = require("mysql");
+require("dotenv").config(); 
+const mysql = require("mysql"); 
+const fs = require("fs");
 
 const DB_HOST = process.env.DB_HOST;
 const DB_USER = process.env.DB_USER;
@@ -16,12 +17,12 @@ const con = mysql.createConnection({
 
 con.connect(function(err) {
   if (err) throw err;
-  console.log("Connected!");
-
-  let sql = "DROP TABLE if exists items; CREATE TABLE items(id INT NOT NULL AUTO_INCREMENT, text VARCHAR(40) not null, complete BOOLEAN, PRIMARY KEY (id));";
-  con.query(sql, function (err, result) {
+    console.log("Connected!"); 
+ 
+let sql = fs.readFileSync(__dirname+"/init_db.sql").toString();  // this is new 
+con.query(sql, function(err, result) {
     if (err) throw err;
-    console.log("Table creation `items` was successful!");
+    console.log("Table creation `income` was successful!");
 
     console.log("Closing...");
   });

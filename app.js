@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var fundsRouter = require('./routes/funds');
+var incomeRouter = require('./routes/income');
 var budgetRouter = require('./routes/budget');
 var costsRouter = require('./routes/costs');
 
@@ -19,7 +19,7 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/funds', fundsRouter);
+app.use('/income', incomeRouter);
 app.use('/budget', budgetRouter);
 app.use('/costs', costsRouter);
 
