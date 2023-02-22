@@ -4,6 +4,8 @@ import HomeView from "./components/HomeView.js";
 import Budget from "./components/Budget.js";
 import Funds from "./components/Funds.js";
 import './App.css';
+import ActualCost from "./components/ActualCost.js";
+import Compare from "./components/Compare.js";
 
 function App() {
 
@@ -21,7 +23,10 @@ function App() {
       </nav> */}
       <Routes>
         <Route path="/" element={<HomeView />} />
-        <Route path="/budget" element={<Budget />} />
+        <Route path="/budget" element={<Budget />} >
+          <Route path="costs" element={<ActualCost />} />
+          <Route path="compare" element={<Compare />} />
+        </Route>
         <Route path="/funds" element={<Funds />} />
       </Routes>
     </div>

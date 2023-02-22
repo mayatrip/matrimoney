@@ -16,11 +16,6 @@ export default function HomeView() {
           <button type="button">ADD FUNDS</button>
         </Link>
       </div>
-
-      <Routes>
-        <Route path="/budget" element={<Budget />} />
-        <Route path="/funds" element={<Funds />} />
-      </Routes>
     </div>
   )
 }

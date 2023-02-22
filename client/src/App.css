@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+div {
+  position:relative;
+}
+
 .App {
   text-align: center;
   font-family: 'Alumni Sans', sans-serif;
@@ -53,3 +57,25 @@ h2 {
   letter-spacing: 0.1em;
   color:#0F0F0F;
 }
+
+a {
+  color:#0F0F0F;
+}
+
+.secondary-nav{
+  text-align:right;
+  margin-right:75px;
+}
+
+.secondary-nav a {
+  margin-left: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size:22px;
+}
+
+.secondary-nav a:hover {
+  text-shadow: 0.5px 0.5px 1px #0f0f0f;
+}
+
+

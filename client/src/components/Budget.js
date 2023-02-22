@@ -1,9 +1,11 @@
 import React from 'react';
 import Funds from "./Funds.js";
 import HomeView from "./HomeView.js";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, Outlet } from "react-router-dom";
 import "./Budget.css";
 import logo from "../images/logo.png";
+import ActualCost from './ActualCost.js';
+import Compare from './Compare.js';
 
 export default function Budget() {
   return (
@@ -16,6 +18,12 @@ export default function Budget() {
         </div>
       </nav>
       <h2>My Budget</h2>
+      <div className="secondary-nav">
+        <Link to="/budget" >Estimated</Link>
+        <Link to="/budget/costs" >Actual</Link>
+        <Link to="/budget/compare" >Compare</Link>
+      </div>
+      <Outlet/>
     </div>
   )
 }
