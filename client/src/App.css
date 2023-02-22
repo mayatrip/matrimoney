@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  height:100vh;
+  width: 100vw;
+  background-image: url("./images/wedding-photo.jpg");
+  background-position: 'center';
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* nav bar */
@@ -7,7 +13,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: left;
-  margin: 30px;
+  padding:30px;
 }
 
 #nav-right {

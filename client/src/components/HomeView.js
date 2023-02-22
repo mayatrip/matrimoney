@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import "./HomeView.css";
 
 export default function HomeView() {
   return (
-    <div>HomeView</div>
+    <div className="HomeView">
+      <h1>MATRIMONEY</h1>
+    </div>
   )
 }
