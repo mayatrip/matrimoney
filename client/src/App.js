@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <nav>
+      {/* <nav>
         <div>
           <Link to="/">Home</Link>
         </div>
@@ -18,7 +18,7 @@ function App() {
           <Link to="/budget" className="nav-link">Budget</Link>
           <Link to="/funds" className="nav-link">Funds</Link>
         </div>
-      </nav>
+      </nav> */}
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/budget" element={<Budget />} />

@@ -1,0 +1,23 @@
+.Funds {
+    font-family: 'Alumni Sans', sans-serif;
+    position: relative;
+    
+}
+
+.Funds::before {
+    content: "";
+    position: absolute;
+    background-image: url("../images/wedding-photo.jpg");
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity:0.27;
+    height:100vh;
+    width: 100vw;
+}
+
+nav{
+    position: relative;
+}
