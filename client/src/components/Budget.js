@@ -11,11 +11,11 @@ export default function Budget() {
       <nav>
         <Link to="/"  id="logo"><img src={logo} alt="Home"></img></Link>
         <div id="nav-right">
-          <Link to="/budget" className="nav-link">Budget</Link>
+          <Link to="/budget" className="nav-link" id="selected-link">Budget</Link>
           <Link to="/funds" className="nav-link">Funds</Link>
         </div>
       </nav>
-      Budget
+      <h2>My Budget</h2>
     </div>
   )
 }

@@ -13,7 +13,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: left;
-  padding:30px;
+  padding:30px 75px 0px 30px;
   letter-spacing: 0.1em;
   font-size:22px;
   text-transform:uppercase;
@@ -34,5 +34,22 @@ nav img {
 
 .nav-link {
   margin-left: 20px;
+  color:#7A3B69;
 }
 
+.nav-link:hover{
+  text-shadow: 0.5px 0.5px 1px #7A3B69;
+}
+
+#selected-link {
+  font-weight: bolder;
+}
+
+/* styling that applies to both budget and funds */
+h2 {
+  margin-top:0;
+  font-size: 56px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color:#0F0F0F;
+}
