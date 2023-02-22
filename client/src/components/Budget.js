@@ -6,6 +6,7 @@ import "./Budget.css";
 import logo from "../images/logo.png";
 import ActualCost from './ActualCost.js';
 import Compare from './Compare.js';
+import EstimatedCostForm from './EstimatedCostForm.js';
 
 export default function Budget() {
   return (
@@ -74,9 +75,7 @@ export default function Budget() {
             </tr>
             {/* map goes here */}
           </table>
-          <p>
-            *Recommendation based off of your budget and average breakdown of wedding costs
-          </p>
+          <EstimatedCostForm />
         </div>
         </div>
       </div>
