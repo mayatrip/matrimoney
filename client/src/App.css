@@ -78,16 +78,39 @@ a {
   text-shadow: 0.5px 0.5px 1px #0f0f0f;
 }
 
+.selected-second-nav{
+  font-weight:bolder;
+}
+
+#bottom-container{
+  background: rgba(247, 178, 173, 0.5);
+  width:100%;
+}
+
 #table-div {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap:20px;
-  width: 75%;
+  gap:40px;
   margin: 0 auto;
+  width:75%;
+
 }
 
 table {
   width:100%;
+  border: 3px solid white;
 }
 
+td {
+  border: 1px solid white;
+}
+
+/* estimate page */
+#table-div-left p {
+  width: 75%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  padding-top:15px;
+  padding-bottom:45px;
+}
 

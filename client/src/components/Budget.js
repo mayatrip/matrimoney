@@ -19,27 +19,67 @@ export default function Budget() {
       </nav>
       <h2>My Budget</h2>
       <div className="secondary-nav">
-        <Link to="/budget" >Estimated</Link>
+        <Link to="/budget" className="selected-second-nav">Estimated</Link>
         <Link to="/budget/costs" >Actual</Link>
         <Link to="/budget/compare" >Compare</Link>
       </div>
-      <div id="table-div">
+      <div id="bottom-container">
+        <div id="table-div">
         <div id="table-div-left">
           <h3>
-            Our Recommendations:
+            Our Recommendations:*
           </h3>
           <table>
             <tr>
               <th>Vendor</th>
               <th>Cost</th>
             </tr>
+            <tr>
+              <td>Venue</td>
+              <td>$</td>
+            </tr>
+            <tr>
+              <td>Venue</td>
+              <td>$</td>
+            </tr>
+            <tr>
+              <td>Venue</td>
+              <td>$</td>
+            </tr>
+            <tr>
+              <td>Venue</td>
+              <td>$</td>
+            </tr>
+            <tr>
+              <td>Venue</td>
+              <td>$</td>
+            </tr>
+            <tr>
+              <td>Venue</td>
+              <td>$</td>
+            </tr>
           </table>
           <p>
-
+            *Recommendation based off of your budget and average breakdown of wedding costs
           </p>
         </div>
+        <div id="table-div-right">
+          <h3>
+            Estimated Costs:
+          </h3>
+          <table>
+            <tr>
+              <th>Vendor</th>
+              <th>Cost</th>
+            </tr>
+            {/* map goes here */}
+          </table>
+          <p>
+            *Recommendation based off of your budget and average breakdown of wedding costs
+          </p>
+        </div>
+        </div>
       </div>
-      <Outlet/>
     </div>
   )
 }

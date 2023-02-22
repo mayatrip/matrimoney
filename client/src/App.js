@@ -14,10 +14,9 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<HomeView />} />
-        <Route path="/budget" element={<Budget />} >
-          <Route path="costs" element={<ActualCost />} />
-          <Route path="compare" element={<Compare />} />
-        </Route>
+        <Route path="/budget" element={<Budget />} />
+        <Route path="/budget/costs" element={<ActualCost />} />
+        <Route path="/budget/compare" element={<Compare />} />
         <Route path="/funds" element={<Funds />} />
       </Routes>
     </div>
