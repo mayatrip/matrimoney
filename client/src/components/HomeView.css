@@ -1,4 +1,9 @@
+.HomeView {
+    font-family: 'Alumni Sans', sans-serif;
+}
+
 h1 {
+    margin-top:70px;
     font-family: 'Montserrat Subrayada', Optima, sans-serif;
     font-weight:bold;
     font-size: 80px;
@@ -15,5 +20,33 @@ h1 {
       0 0 151px #f7b2ad;
 }
 
+#homepage-buttons {
+    width: 20%;
+    margin: 0 auto;
+    margin-top:100px;
+}
 
+.HomeView button{
+    display:block;
+    width:100%;
+    background: #f7b2ad;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding:5px;
+    border-radius:20px;
+    outline: none;
+    border:none;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    cursor:pointer;
+}
+
+button:hover {
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.7);
+  }
+
+a {
+    text-decoration: none;
+}
 
