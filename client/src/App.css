@@ -4,12 +4,6 @@
 
 .App {
   text-align: center;
-  /* height:100vh;
-  width: 100vw;
-  background-image: url("./images/wedding-photo.jpg");
-  background-position: 'center';
-  background-size: cover;
-  background-repeat: no-repeat; */
   font-family: 'Alumni Sans', sans-serif;
   font-size:20px;
 }
@@ -20,10 +14,22 @@ nav {
   grid-template-columns: 1fr 1fr;
   text-align: left;
   padding:30px;
+  letter-spacing: 0.1em;
+  font-size:22px;
+  text-transform:uppercase;
+  position: relative;
+}
+
+nav img {
+    width:40px;
+    aspect-ratio: 1/1;
+    object-fit:contain;
+    vertical-align: middle;
 }
 
 #nav-right {
   justify-self: right;
+  align-self:center;
 }
 
 .nav-link {
