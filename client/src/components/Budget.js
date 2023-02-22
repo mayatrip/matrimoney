@@ -23,6 +23,22 @@ export default function Budget() {
         <Link to="/budget/costs" >Actual</Link>
         <Link to="/budget/compare" >Compare</Link>
       </div>
+      <div id="table-div">
+        <div id="table-div-left">
+          <h3>
+            Our Recommendations:
+          </h3>
+          <table>
+            <tr>
+              <th>Vendor</th>
+              <th>Cost</th>
+            </tr>
+          </table>
+          <p>
+
+          </p>
+        </div>
+      </div>
       <Outlet/>
     </div>
   )

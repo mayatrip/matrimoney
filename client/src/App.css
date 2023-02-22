@@ -78,4 +78,16 @@ a {
   text-shadow: 0.5px 0.5px 1px #0f0f0f;
 }
 
+#table-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+table {
+  width:100%;
+}
+
 
