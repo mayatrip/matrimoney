@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import MatrimoneyApi from '../MatrimoneyApi.js';
+import ActualCostForm from './ActualCostForm.js';
 
 export default function ActualCost() {
 
@@ -26,6 +27,15 @@ export default function ActualCost() {
         setSelectedCost(uresponse.data[0]);
     } else {
         console.log(`Error! ${uresponse.error}`);
+    }
+  }
+
+  const addCost = async newActCost => {
+    let uresponse = await MatrimoneyApi.addCostActual(newActCost);
+    if (uresponse.ok){
+      setActCosts(uresponse.data);
+    } else{
+      console.log(`Error! ${uresponse.error}`);
     }
   }
 
@@ -68,6 +78,7 @@ export default function ActualCost() {
                     <p>{selectedCost.notes}</p>
                 </div>
             </div>
+            <ActualCostForm addCostCb={newActCost => addCost(newActCost)}/>
         </div>
       </div>
     </div>
