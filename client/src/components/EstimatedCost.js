@@ -20,23 +20,11 @@ export default function EstimatedCostDisplay() {
   }
 
   const addCost = async newEstCost => {
-    console.log(newEstCost);
-    let options = {
-      method: "POST",
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(newEstCost)
-    };
-
-    try {
-      let response = await fetch('/budget', options);
-      if (response.ok){
-        let cost = await response.json();
-        setEstCosts(cost);
-      } else{
-        console.log(`Server error: ${response.status}: ${response.statusText}`)
-      }
-    } catch(err){
-      console.log(`Network error: ${err.message}`)
+    let uresponse = await MatrimoneyApi.addCostEstimate(newEstCost);
+    if (uresponse.ok){
+      setEstCosts(uresponse.data);
+    } else{
+      console.log(`Error! ${uresponse.error}`);
     }
   }
 
