@@ -17,9 +17,6 @@ export default function Budget() {
         </div>
       </nav>
       <h2>My Budget</h2>
-      <Routes>
-        <Route path="/budget" element={<EstimatedCost />} />
-      </Routes>
       <Outlet />
     </div>
   )

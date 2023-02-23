@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/budget" element={<Budget />} >
-          <Route path="/budget" element={<EstimatedCost />} />
+          <Route index element={<EstimatedCost />} />
           <Route path="/budget/costs" element={<ActualCost />} />
           <Route path="/budget/compare" element={<Compare />} />
         </Route>
