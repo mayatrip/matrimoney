@@ -21,7 +21,7 @@ export default function ActualCostForm(props) {
       setActCost(EMPTY_FORM);
     }
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="actual-cost-form" onSubmit={handleSubmit}>
         <label>Vendor Name:
             <input 
             type = "text"
@@ -58,7 +58,9 @@ export default function ActualCostForm(props) {
             required
             />
         </label>
-        <button type="submit">+</button>
+        <div className="span-2-rows">
+        <button id="actual-cost-button" type="submit" className="cursor-pointer">+</button>
+        </div>
     </form>
   )
 }

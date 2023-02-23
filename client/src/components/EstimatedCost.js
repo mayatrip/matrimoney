@@ -100,7 +100,7 @@ export default function EstimatedCostDisplay() {
                 <tr key={c.id}>
                   <td>{c.text}</td>
                   <td>${c.amount}
-                    <button type="submit" onClick={e => deleteCostEstimate(c.id)}>x</button>
+                    <button className="cursor-pointer" type="submit" onClick={e => deleteCostEstimate(c.id)}>x</button>
                   </td>
                 </tr>
               ))}

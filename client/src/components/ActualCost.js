@@ -6,7 +6,7 @@ import ActualCostForm from './ActualCostForm.js';
 export default function ActualCost() {
 
   const [actualCosts, setActCosts] = useState([]);
-  const [selectedCost, setSelectedCost] = useState({})
+  const [selectedCost, setSelectedCost] = useState(null)
 
   useEffect(() => {
     getCostActual();
@@ -39,6 +39,18 @@ export default function ActualCost() {
     }
   }
 
+  const deleteCostActual = async id => {
+    if (selectedCost && selectedCost.id === id) {
+        setSelectedCost(null);
+      }
+    let uresponse = await MatrimoneyApi.deleteCostActual(id);
+    if (uresponse.ok) {
+      setActCosts(uresponse.data)
+    } else {
+      console.log(`Error! ${uresponse.error}`)
+    }
+  }
+
   return (
     <div className='ActualCost'>
       <div className="secondary-nav">
@@ -61,9 +73,10 @@ export default function ActualCost() {
                     </tr>
                     {actualCosts.map(c => (
                         <tr key={c.id}>
-                            <td onClick={e => getOneCostActual(c.id)}>{c.text}</td>
-                            <td onClick={e => getOneCostActual(c.id)}>${c.amount}</td>
-                            <td onClick={e => getOneCostActual(c.id)}>{c.income_id}</td>
+                            <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{c.text}</td>
+                            <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>${c.amount}</td>
+                            <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{c.income_id}</td>
+                            <td className="cursor-pointer" style ={{border: "none", width:10}}><button type="submit" onClick={e => deleteCostActual(c.id)}>x</button></td>
                         </tr>
                     ))}
                 </tbody>
@@ -73,10 +86,17 @@ export default function ActualCost() {
                 <h3>
                     Notes:
                 </h3>
+                { selectedCost && 
                 <div className="actual-grid-right">
                     <h3>{selectedCost.text}</h3>
                     <p>{selectedCost.notes}</p>
                 </div>
+                }
+                { !selectedCost && 
+                <div className="actual-grid-right">
+                    <h3>Click on an item for more info</h3>
+                </div>
+                }
             </div>
             <ActualCostForm addCostCb={newActCost => addCost(newActCost)}/>
         </div>
