@@ -7,25 +7,21 @@ import logo from "../images/logo.png";
 import ActualCost from './ActualCost.js';
 import Compare from './Compare.js';
 import EstimatedCostForm from './EstimatedCostForm.js';
+import MatrimoneyApi from '../MatrimoneyApi.js';
 
 export default function Budget() {
   const [estimatedCosts, setEstCosts] = useState([]);
 
   useEffect(() => {
-    getCostEstimated();
+    getCostEstimate();
   }, []);
 
-  async function getCostEstimated(){
-    try {
-      let response = await fetch('/budget');
-      if (response.ok){
-        let estCosts = await response.json();
-        setEstCosts(estCosts);
-      } else {
-        console.log(`Network error: ${response.status}, ${response.statusText}`);
-      }
-    } catch(err){
-      console.log(`Server error: ${err.message}`);
+  async function getCostEstimate(){
+    let uresponse = await MatrimoneyApi.getCostEstimate();
+    if (uresponse.ok){
+      setEstCosts(uresponse.data);
+    } else {
+      console.log(`Error! ${uresponse.error}`)
     }
   }
 
