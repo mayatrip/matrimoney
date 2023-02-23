@@ -48,6 +48,32 @@ export default function EstimatedCostDisplay() {
         <div className="table-div">
         <div className="table-div-left">
           <h3>
+            Estimated Costs:
+          </h3>
+          <table>
+            <tbody>
+              <tr>
+                <th>Vendor</th>
+                <th>Cost</th>
+              </tr>
+              {estimatedCosts.map(c => (
+                <tr key={c.id}>
+                  <td>{c.text}</td>
+                  <td>${c.amount}
+                    <button className="cursor-pointer" type="submit" onClick={e => deleteCostEstimate(c.id)}>x</button>
+                  </td>
+                </tr>
+              ))}
+              <tr>
+                <td>Total:</td>
+                <td>${estimatedCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0)}</td>
+              </tr>
+            </tbody>
+          </table>
+          <EstimatedCostForm addCostCb={newEstCost => addCost(newEstCost)}/>
+        </div>
+        <div className="table-div-right">
+          <h3>
             Our Recommendations:*
           </h3>
           <table>
@@ -85,32 +111,6 @@ export default function EstimatedCostDisplay() {
           <p>
             *Recommendation based off of your budget and average breakdown of wedding costs
           </p>
-        </div>
-        <div className="table-div-right">
-          <h3>
-            Estimated Costs:
-          </h3>
-          <table>
-            <tbody>
-              <tr>
-                <th>Vendor</th>
-                <th>Cost</th>
-              </tr>
-              {estimatedCosts.map(c => (
-                <tr key={c.id}>
-                  <td>{c.text}</td>
-                  <td>${c.amount}
-                    <button className="cursor-pointer" type="submit" onClick={e => deleteCostEstimate(c.id)}>x</button>
-                  </td>
-                </tr>
-              ))}
-              <tr>
-                <td>Total:</td>
-                <td>${estimatedCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0)}</td>
-              </tr>
-            </tbody>
-          </table>
-          <EstimatedCostForm addCostCb={newEstCost => addCost(newEstCost)}/>
         </div>
         </div>
       </div>
