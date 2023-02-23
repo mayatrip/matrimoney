@@ -1,8 +1,6 @@
 import React from 'react';
 import "./HomeView.css";
-import Budget from "./Budget.js";
-import Funds from "./Funds.js";
-import { Route, Routes, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function HomeView() {
   return (

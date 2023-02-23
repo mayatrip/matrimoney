@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import HomeView from "./HomeView.js";
-import Budget from "./Budget.js";
-import { Route, Routes, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Funds.css";
 import logo from "../images/logo.png";
 import MatrimoneyApi from '../MatrimoneyApi.js';

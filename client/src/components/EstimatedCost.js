@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MatrimoneyApi from '../MatrimoneyApi.js';
-import ActualCost from './ActualCost.js';
-import Compare from './Compare.js';
 import EstimatedCostForm from './EstimatedCostForm';
-import { Route, Routes, Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function EstimatedCostDisplay() {
   const [estimatedCosts, setEstCosts] = useState([]);

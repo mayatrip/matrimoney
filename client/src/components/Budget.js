@@ -1,6 +1,4 @@
 import React from 'react';
-import Funds from "./Funds.js";
-import HomeView from "./HomeView.js";
 import { Route, Routes, Link, Outlet } from "react-router-dom";
 import "./Budget.css";
 import logo from "../images/logo.png";
@@ -19,7 +17,10 @@ export default function Budget() {
         </div>
       </nav>
       <h2>My Budget</h2>
-      <EstimatedCost />
+      <Routes>
+        <Route path="/budget" element={<EstimatedCost />} />
+      </Routes>
+      <Outlet />
     </div>
   )
 }
