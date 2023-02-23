@@ -1,23 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import MatrimoneyApi from '../MatrimoneyApi.js';
 import EstimatedCostForm from './EstimatedCostForm';
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 export default function EstimatedCostDisplay() {
-  const [estimatedCosts, setEstCosts] = useState([]);
-
-  useEffect(() => {
-    getCostEstimate();
-  }, []);
-
-  async function getCostEstimate(){
-    let uresponse = await MatrimoneyApi.getCostEstimate();
-    if (uresponse.ok){
-      setEstCosts(uresponse.data);
-    } else {
-      console.log(`Error! ${uresponse.error}`)
-    }
-  }
+  const [estimatedCosts, setEstCosts] = useOutletContext();
 
   const addCost = async newEstCost => {
     let uresponse = await MatrimoneyApi.addCostEstimate(newEstCost);

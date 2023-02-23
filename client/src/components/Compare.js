@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 export default function Compare() {
+  const [estimatedCosts, setEstCosts] = useOutletContext();
+
   return (
     <div className='Compare'>
       <div className="secondary-nav">
@@ -12,14 +14,24 @@ export default function Compare() {
       <div id="table-div">
         <div id="table-div-left">
           <h3>
-            Our Recommendations:
+            Compare
           </h3>
           <table>
             <tbody>
-                <tr>
+              <tr>
                 <th>Vendor</th>
                 <th>Cost</th>
+              </tr>
+              {estimatedCosts.map(c => (
+                <tr key={c.id}>
+                  <td>{c.text}</td>
+                  <td>${c.amount}</td>
                 </tr>
+              ))}
+              <tr>
+                <td>Total:</td>
+                <td>${estimatedCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0)}</td>
+              </tr>
             </tbody>
           </table>
           <p>
