@@ -28,6 +28,15 @@ export default function EstimatedCostDisplay() {
     }
   }
 
+  const deleteCostEstimate = async id => {
+    let uresponse = await MatrimoneyApi.deleteCostEstimate(id);
+    if (uresponse.ok) {
+      setEstCosts(uresponse.data)
+    } else {
+      console.log(`Error! ${uresponse.error}`)
+    }
+  }
+
   return (
     <div>
     <div className="secondary-nav">
@@ -90,7 +99,9 @@ export default function EstimatedCostDisplay() {
               {estimatedCosts.map(c => (
                 <tr key={c.id}>
                   <td>{c.text}</td>
-                  <td>${c.amount}</td>
+                  <td>${c.amount}
+                    <button type="submit" onClick={e => deleteCostEstimate(c.id)}>x</button>
+                  </td>
                 </tr>
               ))}
               <tr>
