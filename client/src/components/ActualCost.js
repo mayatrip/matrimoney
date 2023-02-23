@@ -36,8 +36,8 @@ export default function ActualCost() {
         <Link to="/budget/costs" className="selected-second-nav">Actual</Link>
         <Link to="/budget/compare" >Compare</Link>
       </div>
-      <div id="table-div">
-        <div id="table-div-left">
+      <div className="table-div">
+        <div className="table-div-left">
           <h3>
             Actual Costs:
           </h3>
@@ -51,13 +51,14 @@ export default function ActualCost() {
                     <tr key={c.id}>
                         <td>{c.text}</td>
                         <td>${c.amount}</td>
+                        <td>{c.income_id}</td>
                     </tr>
                 ))}
             </tbody>
           </table>
-          <p>
+        </div>
+        <div className="table-div-right">
 
-          </p>
         </div>
       </div>
     </div>

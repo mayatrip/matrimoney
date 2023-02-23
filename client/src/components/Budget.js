@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Routes, Link, Outlet } from "react-router-dom";
 import "./Budget.css";
 import logo from "../images/logo.png";
-import EstimatedCost from './EstimatedCost.js';
 
 export default function Budget() {
 
@@ -12,7 +11,7 @@ export default function Budget() {
       <nav>
         <Link to="/"  id="logo"><img src={logo} alt="Home"></img></Link>
         <div id="nav-right">
-          <Link to="/budget" className="nav-link" id="selected-link">Budget</Link>
+          <Link to="/budget" className="nav-link selected-link">Budget</Link>
           <Link to="/funds" className="nav-link">Funds</Link>
         </div>
       </nav>

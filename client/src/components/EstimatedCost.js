@@ -45,8 +45,8 @@ export default function EstimatedCostDisplay() {
         <Link to="/budget/compare" >Compare</Link>
       </div>
       <div id="bottom-container">
-        <div id="table-div">
-        <div id="table-div-left">
+        <div className="table-div">
+        <div className="table-div-left">
           <h3>
             Our Recommendations:*
           </h3>
@@ -86,7 +86,7 @@ export default function EstimatedCostDisplay() {
             *Recommendation based off of your budget and average breakdown of wedding costs
           </p>
         </div>
-        <div id="table-div-right">
+        <div className="table-div-right">
           <h3>
             Estimated Costs:
           </h3>

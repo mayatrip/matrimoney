@@ -45,7 +45,7 @@ nav img {
   text-shadow: 0.5px 0.5px 1px #7A3B69;
 }
 
-#selected-link {
+.selected-link {
   font-weight: bolder;
 }
 
@@ -97,13 +97,20 @@ a {
   width:100%;
 }
 
-#table-div {
+.table-div {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap:40px;
   margin: 0 auto;
   width:75%;
+}
 
+.table-div-left p {
+  width: 75%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  padding-top:15px;
+  padding-bottom:45px;
 }
 
 table {
@@ -160,12 +167,4 @@ td button {
 
 }
 
-/* estimate page */
-#table-div-left p {
-  width: 75%;
-  margin: 0 auto;
-  text-transform: uppercase;
-  padding-top:15px;
-  padding-bottom:45px;
-}
 

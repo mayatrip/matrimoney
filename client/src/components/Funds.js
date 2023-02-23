@@ -26,7 +26,7 @@ export default function Funds() {
       <Link to="/"  id="logo"><img src={logo} alt="Home"></img></Link>
         <div id="nav-right">
           <Link to="/budget" className="nav-link">Budget</Link>
-          <Link to="/funds" className="nav-link" id="selected-link">Funds</Link>
+          <Link to="/funds" className="nav-link selected-link">Funds</Link>
         </div>
       </nav>
       <h3>
