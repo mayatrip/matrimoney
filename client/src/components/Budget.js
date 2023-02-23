@@ -92,8 +92,13 @@ export default function Budget() {
                 <th>Vendor</th>
                 <th>Cost</th>
               </tr>
+              {estimatedCosts.map(c => (
+                <tr key={c.id}>
+                  <td>{c.text}</td>
+                  <td>${c.amount}</td>
+                </tr>
+              ))}
             </tbody>
-            {/* map goes here */}
           </table>
           <EstimatedCostForm />
         </div>
