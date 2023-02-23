@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Funds from "./Funds.js";
 import HomeView from "./HomeView.js";
 import { Route, Routes, Link, Outlet } from "react-router-dom";
@@ -9,6 +9,26 @@ import Compare from './Compare.js';
 import EstimatedCostForm from './EstimatedCostForm.js';
 
 export default function Budget() {
+  const [estimatedCosts, setEstCosts] = useState([]);
+
+  useEffect(() => {
+    getCostEstimated();
+  }, []);
+
+  async function getCostEstimated(){
+    try {
+      let response = await fetch('/budget');
+      if (response.ok){
+        let estCosts = await response.json();
+        setEstCosts(estCosts);
+      } else {
+        console.log(`Network error: ${response.status}, ${response.statusText}`);
+      }
+    } catch(err){
+      console.log(`Server error: ${err.message}`);
+    }
+  }
+
   return (
     <div className='Budget'>
       <nav>
@@ -31,34 +51,36 @@ export default function Budget() {
             Our Recommendations:*
           </h3>
           <table>
-            <tr>
-              <th>Vendor</th>
-              <th>Cost</th>
-            </tr>
-            <tr>
-              <td>Venue</td>
-              <td>$</td>
-            </tr>
-            <tr>
-              <td>Venue</td>
-              <td>$</td>
-            </tr>
-            <tr>
-              <td>Venue</td>
-              <td>$</td>
-            </tr>
-            <tr>
-              <td>Venue</td>
-              <td>$</td>
-            </tr>
-            <tr>
-              <td>Venue</td>
-              <td>$</td>
-            </tr>
-            <tr>
-              <td>Venue</td>
-              <td>$</td>
-            </tr>
+            <tbody>
+              <tr>
+                <th>Vendor</th>
+                <th>Cost</th>
+              </tr>
+              <tr>
+                <td>Venue</td>
+                <td>$</td>
+              </tr>
+              <tr>
+                <td>Venue</td>
+                <td>$</td>
+              </tr>
+              <tr>
+                <td>Venue</td>
+                <td>$</td>
+              </tr>
+              <tr>
+                <td>Venue</td>
+                <td>$</td>
+              </tr>
+              <tr>
+                <td>Venue</td>
+                <td>$</td>
+              </tr>
+              <tr>
+                <td>Venue</td>
+                <td>$</td>
+              </tr>
+            </tbody>
           </table>
           <p>
             *Recommendation based off of your budget and average breakdown of wedding costs
@@ -69,10 +91,12 @@ export default function Budget() {
             Estimated Costs:
           </h3>
           <table>
-            <tr>
-              <th>Vendor</th>
-              <th>Cost</th>
-            </tr>
+            <tbody>
+              <tr>
+                <th>Vendor</th>
+                <th>Cost</th>
+              </tr>
+            </tbody>
             {/* map goes here */}
           </table>
           <EstimatedCostForm />

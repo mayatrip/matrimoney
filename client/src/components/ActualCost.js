@@ -29,10 +29,12 @@ export default function ActualCost() {
             Our Recommendations:
           </h3>
           <table>
-            <tr>
-              <th>Vendor</th>
-              <th>Cost</th>
-            </tr>
+            <tbody>
+                <tr>
+                <th>Vendor</th>
+                <th>Cost</th>
+                </tr>
+            </tbody>
           </table>
           <p>
 
