@@ -92,9 +92,11 @@ a {
   font-weight:bolder;
 }
 
-#bottom-container{
+.bottom-container{
   background: rgba(247, 178, 173, 0.5);
   width:100%;
+  padding-bottom:10px;
+  min-height:75vh;
 }
 
 .table-div {
@@ -128,7 +130,6 @@ form {
   grid-template-columns: 1fr 1fr 20px;
   justify-content: center;
   gap:20px;
-  padding-bottom:75px;
 }
 
 input{
@@ -167,4 +168,7 @@ td button {
 
 }
 
-
+/* actual costs page */
+.actual-grid-right {
+  border: 2px solid white;
+}

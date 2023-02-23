@@ -44,7 +44,7 @@ export default function EstimatedCostDisplay() {
         <Link to="/budget/costs" >Actual</Link>
         <Link to="/budget/compare" >Compare</Link>
       </div>
-      <div id="bottom-container">
+      <div className="bottom-container">
         <div className="table-div">
         <div className="table-div-left">
           <h3>

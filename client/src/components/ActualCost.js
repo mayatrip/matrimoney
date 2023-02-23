@@ -36,29 +36,38 @@ export default function ActualCost() {
         <Link to="/budget/costs" className="selected-second-nav">Actual</Link>
         <Link to="/budget/compare" >Compare</Link>
       </div>
-      <div className="table-div">
-        <div className="table-div-left">
-          <h3>
-            Actual Costs:
-          </h3>
-          <table>
-            <tbody>
-                <tr>
-                    <th>Vendor</th>
-                    <th>Cost</th>
-                </tr>
-                {actualCosts.map(c => (
-                    <tr key={c.id}>
-                        <td>{c.text}</td>
-                        <td>${c.amount}</td>
-                        <td>{c.income_id}</td>
+      <div className="bottom-container">
+        <div className="table-div">
+            <div className="table-div-left">
+            <h3>
+                Actual Costs:
+            </h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Vendor</th>
+                        <th>Cost</th>
+                        <th>Who is Paying?</th>
                     </tr>
-                ))}
-            </tbody>
-          </table>
-        </div>
-        <div className="table-div-right">
-
+                    {actualCosts.map(c => (
+                        <tr key={c.id}>
+                            <td onClick={e => getOneCostActual(c.id)}>{c.text}</td>
+                            <td onClick={e => getOneCostActual(c.id)}>${c.amount}</td>
+                            <td onClick={e => getOneCostActual(c.id)}>{c.income_id}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            </div>
+            <div>
+                <h3>
+                    Notes:
+                </h3>
+                <div className="actual-grid-right">
+                    <h3>{selectedCost.text}</h3>
+                    <p>{selectedCost.notes}</p>
+                </div>
+            </div>
         </div>
       </div>
     </div>
