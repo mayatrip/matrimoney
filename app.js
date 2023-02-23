@@ -21,6 +21,6 @@ app.use(cookieParser());
 app.use('/', indexRouter);
 app.use('/income', incomeRouter);
 app.use('/budget', budgetRouter);
-app.use('/costs', costsRouter);
+app.use('/budget/costs', costsRouter);
 
 module.exports = app;
