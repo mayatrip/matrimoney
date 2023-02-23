@@ -56,6 +56,7 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color:#0F0F0F;
+  position:relative;
 }
 
 h3 {
@@ -120,6 +121,7 @@ form {
   grid-template-columns: 1fr 1fr 20px;
   justify-content: center;
   gap:20px;
+  padding-bottom:75px;
 }
 
 input{

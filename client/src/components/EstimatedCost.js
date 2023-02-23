@@ -93,6 +93,10 @@ export default function EstimatedCostDisplay() {
                   <td>${c.amount}</td>
                 </tr>
               ))}
+              <tr>
+                <td>Total:</td>
+                <td>${estimatedCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0)}</td>
+              </tr>
             </tbody>
           </table>
           <EstimatedCostForm addCostCb={newEstCost => addCost(newEstCost)}/>
