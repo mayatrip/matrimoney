@@ -53,7 +53,7 @@ export default function ActualCost() {
       <div id="table-div">
         <div id="table-div-left">
           <h3>
-            Our Recommendations:
+            Actual Costs:
           </h3>
           <table>
             <tbody>

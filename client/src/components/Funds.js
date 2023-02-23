@@ -31,7 +31,23 @@ export default function Funds() {
           <Link to="/funds" className="nav-link" id="selected-link">Funds</Link>
         </div>
       </nav>
-      Funds
+      <h3>
+        My Funds:
+      </h3>
+        <table>
+          <tbody>
+            <tr>
+                <th>Source</th>
+                <th>Amount</th>
+            </tr>
+              {allIncome.map(i => (
+                  <tr key={i.id}>
+                      <td>{i.text}</td>
+                      <td>${i.amount}</td>
+                  </tr>
+              ))}
+          </tbody>
+        </table>
     </div>
   )
 }
