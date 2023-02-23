@@ -11,6 +11,7 @@ import MatrimoneyApi from '../MatrimoneyApi.js';
 export default function ActualCost() {
 
   const [actualCosts, setActCosts] = useState([]);
+  const [selectedCost, setSelectedCost] = useState({})
 
   useEffect(() => {
     getCostActual();
@@ -22,6 +23,15 @@ export default function ActualCost() {
         setActCosts(uresponse.data);
     } else {
         console.log(`Error! ${uresponse.error}`)
+    }
+  }
+
+  async function getOneCostActual(id){
+    let uresponse = await MatrimoneyApi.getOneCostActual(id);
+    if (uresponse.ok){
+        setSelectedCost(uresponse.data[0]);
+    } else {
+        console.log(`Error! ${uresponse.error}`);
     }
   }
 
@@ -48,9 +58,15 @@ export default function ActualCost() {
           <table>
             <tbody>
                 <tr>
-                <th>Vendor</th>
-                <th>Cost</th>
+                    <th>Vendor</th>
+                    <th>Cost</th>
                 </tr>
+                {actualCosts.map(c => (
+                    <tr key={c.id}>
+                        <td>{c.text}</td>
+                        <td>${c.amount}</td>
+                    </tr>
+                ))}
             </tbody>
           </table>
           <p>
