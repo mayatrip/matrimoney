@@ -4,6 +4,7 @@ import Budget from "./Budget.js";
 import { Route, Routes, Link } from "react-router-dom";
 import "./Funds.css";
 import logo from "../images/logo.png";
+import MatrimoneyApi from '../MatrimoneyApi.js';
 
 export default function Funds() {
   const [allIncome, setAllIncome] = useState([]);
@@ -13,16 +14,11 @@ export default function Funds() {
   }, []);
 
   async function getIncome(){
-    try {
-      let response = await fetch('/income');
-      if (response.ok) {
-        let income = await response.json();
-        setAllIncome(income);
-      } else {
-        console.log(`Network error: ${response.status}, ${response.statusText}`)
-      }
-    } catch(err){
-      console.log(`Server error: ${err.message}`)
+    let uresponse = await MatrimoneyApi.getIncome();
+    if (uresponse.ok){
+      setAllIncome(uresponse.data);
+    } else {
+      console.log(`Error! ${uresponse.error}`);
     }
   }
 

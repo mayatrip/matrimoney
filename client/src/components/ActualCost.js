@@ -6,6 +6,7 @@ import Budget from "./Budget.js";
 import "./ActualCost.css";
 import { Route, Routes, Link, Outlet } from "react-router-dom";
 import logo from "../images/logo.png";
+import MatrimoneyApi from '../MatrimoneyApi.js';
 
 export default function ActualCost() {
 
@@ -16,16 +17,11 @@ export default function ActualCost() {
   }, [])
 
   async function getCostActual(){
-    try {
-        let response = await fetch('/budget/costs');
-        if (response.ok) {
-            let actualCosts = await response.json();
-            setActCosts(actualCosts);
-        } else {
-            console.log(`Network error: ${response.status}, ${response.statusText}`);
-        }
-    } catch(err) {
-        console.log(`Server error: ${err.message}`);
+    let uresponse = await MatrimoneyApi.getCostActual();
+    if (uresponse.ok) {
+        setActCosts(uresponse.data);
+    } else {
+        console.log(`Error! ${uresponse.error}`)
     }
   }
 

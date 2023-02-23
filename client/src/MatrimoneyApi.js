@@ -18,7 +18,7 @@ class MatrimoneyApi {
         return await this._doFetch(`/budget/costs`);
     }
 
-    static async getCostActual(id){
+    static async getOneCostActual(id){
         return await this._doFetch(`/budget/costs/${id}`);
     }
 
