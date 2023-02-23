@@ -6,9 +6,11 @@ import MatrimoneyApi from '../MatrimoneyApi';
 
 export default function Budget() {
   const [estimatedCosts, setEstCosts] = React.useState([]);
+  const [actualCosts, setActCosts] = React.useState([]);
 
   useEffect(() => {
     getCostEstimate();
+    getCostActual();
   }, []);
 
   async function getCostEstimate(){
@@ -17,6 +19,15 @@ export default function Budget() {
       setEstCosts(uresponse.data);
     } else {
       console.log(`Error! ${uresponse.error}`)
+    }
+  }
+
+  async function getCostActual(){
+    let uresponse = await MatrimoneyApi.getCostActual();
+    if (uresponse.ok) {
+        setActCosts(uresponse.data);
+    } else {
+        console.log(`Error! ${uresponse.error}`)
     }
   }
 
@@ -48,7 +59,7 @@ export default function Budget() {
         </div>
       </nav>
       <h2>My Budget</h2>
-      <Outlet context={[estimatedCosts, setEstCosts]} />
+      <Outlet context={[actualCosts, setActCosts, estimatedCosts, setEstCosts]}/>
     </div>
   )
 }

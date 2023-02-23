@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import MatrimoneyApi from '../MatrimoneyApi.js';
 import ActualCostForm from './ActualCostForm.js';
 
 export default function ActualCost() {
 
-  const [actualCosts, setActCosts] = useState([]);
+  const [actualCosts, setActCosts] = useOutletContext();
   const [selectedCost, setSelectedCost] = useState(null)
 
-  useEffect(() => {
-    getCostActual();
-  }, [])
+  // useEffect(() => {
+  //   getCostActual();
+  // }, [])
 
-  async function getCostActual(){
-    let uresponse = await MatrimoneyApi.getCostActual();
-    if (uresponse.ok) {
-        setActCosts(uresponse.data);
-    } else {
-        console.log(`Error! ${uresponse.error}`)
-    }
-  }
+  // async function getCostActual(){
+  //   let uresponse = await MatrimoneyApi.getCostActual();
+  //   if (uresponse.ok) {
+  //       setActCosts(uresponse.data);
+  //   } else {
+  //       console.log(`Error! ${uresponse.error}`)
+  //   }
+  // }
 
   async function getOneCostActual(id){
     let uresponse = await MatrimoneyApi.getOneCostActual(id);
