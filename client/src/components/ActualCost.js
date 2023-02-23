@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Compare from './Compare.js';
 import Funds from "./Funds.js";
 import HomeView from "./HomeView.js";
@@ -8,6 +8,27 @@ import { Route, Routes, Link, Outlet } from "react-router-dom";
 import logo from "../images/logo.png";
 
 export default function ActualCost() {
+
+  const [actualCosts, setActCosts] = useState([]);
+
+  useEffect(() => {
+    getCostActual();
+  }, [])
+
+  async function getCostActual(){
+    try {
+        let response = await fetch('/budget/costs');
+        if (response.ok) {
+            let actualCosts = await response.json();
+            setActCosts(actualCosts);
+        } else {
+            console.log(`Network error: ${response.status}, ${response.statusText}`);
+        }
+    } catch(err) {
+        console.log(`Server error: ${err.message}`);
+    }
+  }
+
   return (
     <div className='ActualCost'>
       <nav>
