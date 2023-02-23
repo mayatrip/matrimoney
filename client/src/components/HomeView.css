@@ -3,9 +3,13 @@
     height:100vh;
     width: 100vw;
     background-image: url("../images/wedding-photo.jpg");
-    background-position:center;
     background-size:cover;
     background-repeat: no-repeat;
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
     /* background-attachment: scroll; */
 }
 
