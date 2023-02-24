@@ -39,6 +39,10 @@ static async addIncome(incomeObj){
     return await this._doFetch(`/income`, "POST", incomeObj);
 }
 
+static async changeIncome(id, incomeObj){
+    return await this._doFetch(`/income/${id}`, 'PATCH', incomeObj);
+}
+
 static async deleteIncome(id){
     return await this._doFetch(`/income/${id}`, 'DELETE');
 }

@@ -14,7 +14,7 @@ const EMPTY_FORM = {
 
 export default function ActualCostForm(props) {
     const [newActCost, setActCost] = useState(EMPTY_FORM);
-    const [incomeObj, setIncomeObj] = useState(EMPTY_INCOME)
+    const [incomeObj, setIncomeObj] = useState({})
   
     const handleChange = (event) => {
       let { name, value } = event.target;
@@ -26,7 +26,7 @@ export default function ActualCostForm(props) {
     const handleSubmit = (event) => {
       event.preventDefault();
       props.addCostCb(newActCost);
-      props.setIncomeCb(incomeObj);
+      props.setIncomeCb(newActCost);
       setActCost(EMPTY_FORM);
       setIncomeObj(EMPTY_INCOME);
     }
