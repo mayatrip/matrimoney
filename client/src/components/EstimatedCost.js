@@ -3,8 +3,9 @@ import MatrimoneyApi from '../MatrimoneyApi.js';
 import EstimatedCostForm from './EstimatedCostForm';
 import { Link, useOutletContext } from "react-router-dom";
 
-export default function EstimatedCostDisplay() {
+export default function EstimatedCostDisplay(props) {
   const {estimatedCosts, setEstCosts} = useOutletContext();
+  let totalIncome = props.allIncome.reduce(function (acc, obj) { return acc + obj.amount; }, 0);
 
   const addCost = async newEstCost => {
     let uresponse = await MatrimoneyApi.addCostEstimate(newEstCost);
@@ -72,32 +73,64 @@ export default function EstimatedCostDisplay() {
               </tr>
               <tr>
                 <td>Venue</td>
-                <td>$</td>
+                <td>${(totalIncome * 0.25).toFixed(2)}</td>
               </tr>
               <tr>
-                <td>Venue</td>
-                <td>$</td>
+                <td>Food</td>
+                <td>${(totalIncome * 0.14).toFixed(2)}</td>
               </tr>
               <tr>
-                <td>Venue</td>
-                <td>$</td>
+                <td>Drinks</td>
+                <td>${(totalIncome * 0.08).toFixed(2)}</td>
               </tr>
               <tr>
-                <td>Venue</td>
-                <td>$</td>
+                <td>Music</td>
+                <td>${(totalIncome * 0.1).toFixed(2)}</td>
               </tr>
               <tr>
-                <td>Venue</td>
-                <td>$</td>
+                <td>Photographer</td>
+                <td>${(totalIncome * 0.1).toFixed(2)}</td>
               </tr>
               <tr>
-                <td>Venue</td>
-                <td>$</td>
+                <td>Attire for Couple</td>
+                <td>${(totalIncome * 0.08).toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td>Flowers/Decor</td>
+                <td>${(totalIncome * 0.08).toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td>Stationary</td>
+                <td>${(totalIncome * 0.02).toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td>Wedding Coordinator</td>
+                <td>${(totalIncome * 0.07).toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td>Hair and Makeup</td>
+                <td>${(totalIncome * 0.03).toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td>Wedding Rings</td>
+                <td>${(totalIncome * 0.02).toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td>Favors and Gifts</td>
+                <td>${(totalIncome * 0.01).toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td>Extra Fees/Emergency</td>
+                <td>${(totalIncome * 0.02).toFixed(2)}</td>
+              </tr>
+              <tr>
+                <td>Your funds:</td>
+                <td>${totalIncome}</td>
               </tr>
             </tbody>
           </table>
           <p>
-            *Recommendation based off of your budget and average breakdown of wedding costs
+            *Recommendation based off of your funds and average breakdown of wedding costs
           </p>
         </div>
         </div>
