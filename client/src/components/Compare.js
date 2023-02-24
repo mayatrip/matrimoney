@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useOutletContext } from "react-router-dom";
 
-export default function Compare() {
+export default function Compare(props) {
   const {estimatedCosts, setEstCosts, actualCosts, setActCosts} = useOutletContext();
 
   return (
@@ -51,7 +51,7 @@ export default function Compare() {
                 <tr key={c.id}>
                   <td>{c.text}</td>
                   <td>${c.amount}</td>
-                  <td>{c.income_id}</td>
+                  <td>{(props.allIncome.find(i => i.id === c.income_id)).text}</td>
                 </tr>
               ))}
               <tr>

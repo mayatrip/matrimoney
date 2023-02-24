@@ -88,7 +88,7 @@ function App() {
         <Route path="/budget" element={<Budget allIncome={allIncome} />} >
           <Route index element={<EstimatedCost />} />
           <Route path="/budget/costs" element={<ActualCost setIncomeCb={newIncome => changeIncome(newIncome)} allIncome={allIncome} returnFundsCb={(id, amountDeleted) => returnFunds(id, amountDeleted)}/>} />
-          <Route path="/budget/compare" element={<Compare />} />
+          <Route path="/budget/compare" element={<Compare allIncome={allIncome}/>} />
         </Route>
         <Route path="/funds" element={<Funds />} >
           <Route index element={<FundsForm addIncomeCb={newIncome => addIncome(newIncome)}/>} />
