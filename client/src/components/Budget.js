@@ -59,7 +59,7 @@ export default function Budget() {
         </div>
       </nav>
       <h2>My Budget</h2>
-      <Outlet context={[actualCosts, setActCosts, estimatedCosts, setEstCosts]}/>
+      <Outlet context={[actualCosts, setActCosts, estimatedCosts, setEstCosts] }/>
     </div>
   )
 }
