@@ -85,7 +85,8 @@ function App() {
     if (uresponse.ok) {
       setIncome(uresponse.data)
     } else {
-      console.log(`Error! ${uresponse.error}`)
+      console.log(`Error! ${uresponse.error}`);
+      alert(`Cannot delete funds assigned to a cost`)
     }
   }
 
