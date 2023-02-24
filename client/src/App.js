@@ -43,7 +43,7 @@ function App() {
     let oldAmount = (allIncome.find(i => +i.id === +id));
     oldAmount = oldAmount.amount_used;
     console.log(oldAmount);
-    let totalAmount;
+    let totalAmount = 0;
     if (oldAmount){
       totalAmount = Number(oldAmount) + Number(newIncome.amount)
     } else {
@@ -59,23 +59,26 @@ function App() {
     }
   }
 
-  // async function returnFunds(id, amountDeleted){
-  //   console.log(id, amountDeleted)
-  //   let oldAmount = (allIncome.find(i => +i.id === +id)).amount_Used;
-  //   let totalAmount;
-  //   if (oldAmount){
-  //     totalAmount = Number(oldAmount) - Number(amountDeleted)
-  //   } else {
-  //     totalAmount = -Number(amountDeleted)
-  //   }
-  //   let patchObj = {amount: totalAmount};
-  //   let uresponse = await MatrimoneyApi.changeIncome(id, patchObj);
-  //   if (uresponse.ok){
-  //     setIncome(uresponse.data);
-  //   } else{
-  //     console.log(`Error! ${uresponse.error}`);
-  //   }
-  // }
+  async function returnFunds(id, amountDeleted){
+    let oldAmtUsed = (allIncome.find(i => +i.id === +id));
+    console.log(oldAmtUsed);
+    oldAmtUsed = oldAmtUsed.amount_used;
+    console.log(oldAmtUsed);
+    let totalAmtUsed = 0;
+    if (oldAmtUsed){
+      totalAmtUsed = Number(oldAmtUsed) - Number(amountDeleted)
+    } else {
+      totalAmtUsed = 0 - Number(amountDeleted)
+    } 
+    console.log(totalAmtUsed);
+    let patchObj = {amount: totalAmtUsed};
+    let uresponse = await MatrimoneyApi.changeIncome(id, patchObj);
+    if (uresponse.ok){
+      setIncome(uresponse.data);
+    } else{
+      console.log(`Error! ${uresponse.error}`);
+    }
+  }
 
 
   return (
@@ -84,7 +87,7 @@ function App() {
         <Route path="/" element={<HomeView />} />
         <Route path="/budget" element={<Budget allIncome={allIncome} />} >
           <Route index element={<EstimatedCost />} />
-          <Route path="/budget/costs" element={<ActualCost setIncomeCb={newIncome => changeIncome(newIncome)} allIncome={allIncome}/>} />
+          <Route path="/budget/costs" element={<ActualCost setIncomeCb={newIncome => changeIncome(newIncome)} allIncome={allIncome} returnFundsCb={(id, amountDeleted) => returnFunds(id, amountDeleted)}/>} />
           <Route path="/budget/compare" element={<Compare />} />
         </Route>
         <Route path="/funds" element={<Funds />} >

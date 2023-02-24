@@ -51,11 +51,12 @@ export default function ActualCost(props) {
     }
   }
 
-  // const handleClick = (id) => {
-  //   let amountDeleted = (actualCosts.find(c => c.id === id)).amount;
-  //   deleteCostActual(id);
-  //   props.returnFundsCb(id, amountDeleted);
-  // }
+  const handleClick = (id, incomeId) => {
+    let amountDeleted = (actualCosts.find(c => c.id === id));
+    amountDeleted = amountDeleted.amount;
+    deleteCostActual(id);
+    props.returnFundsCb(incomeId, amountDeleted);
+  }
 
 
 
@@ -84,7 +85,7 @@ export default function ActualCost(props) {
                         <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{c.text}</td>
                         <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>${c.amount}</td>
                         <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{(props.allIncome.find(i => i.id === c.income_id)).text}</td>
-                        <td className="cursor-pointer" style ={{border: "none", width:10}}><button type="submit" onClick={e => deleteCostActual(c.id)}>x</button></td>
+                        <td className="cursor-pointer" style ={{border: "none", width:10}}><button type="submit" onClick={e => handleClick(c.id, c.income_id)}>x</button></td>
                     </tr>
                   ))}
                   <tr>
