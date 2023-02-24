@@ -68,19 +68,23 @@ export default function ActualCost(props) {
             </h3>
             <table>
                 <tbody>
-                    <tr>
-                        <th>Vendor</th>
-                        <th>Cost</th>
-                        <th>Who is Paying?</th>
+                  <tr>
+                    <th>Vendor</th>
+                    <th>Cost</th>
+                    <th>Who is Paying?</th>
+                  </tr>
+                  {actualCosts.map(c => (
+                    <tr key={c.id}>
+                        <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{c.text}</td>
+                        <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>${c.amount}</td>
+                        <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{c.income_id}</td>
+                        <td className="cursor-pointer" style ={{border: "none", width:10}}><button type="submit" onClick={e => deleteCostActual(c.id)}>x</button></td>
                     </tr>
-                    {actualCosts.map(c => (
-                        <tr key={c.id}>
-                            <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{c.text}</td>
-                            <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>${c.amount}</td>
-                            <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{c.income_id}</td>
-                            <td className="cursor-pointer" style ={{border: "none", width:10}}><button type="submit" onClick={e => deleteCostActual(c.id)}>x</button></td>
-                        </tr>
-                    ))}
+                  ))}
+                  <tr>
+                    <td>Total:</td>
+                    <td>${actualCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0)}</td>
+                  </tr>
                 </tbody>
             </table>
             <h4>Add Cost:</h4>

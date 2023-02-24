@@ -14,11 +14,13 @@ export default function FundsDisplay(props) {
           <tbody>
             <tr>
                 <th>Source</th>
-                <th>Amount</th>
+                <th>Total Amount</th>
+                <th>Amount Remaining</th>
             </tr>
               {props.allIncome.map(i => (
                   <tr key={i.id}>
                       <td>{i.text}</td>
+                      <td>${i.amount}</td>
                       <td>${i.amount}</td>
                   </tr>
               ))}
