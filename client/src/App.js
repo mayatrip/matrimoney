@@ -49,7 +49,7 @@ function App() {
         <Route path="/" element={<HomeView />} />
         <Route path="/budget" element={<Budget allIncome={allIncome} />} >
           <Route index element={<EstimatedCost />} />
-          <Route path="/budget/costs" element={<ActualCost setIncomeCb={newIncome => logIncome(newIncome)}/>} />
+          <Route path="/budget/costs" element={<ActualCost setIncomeCb={newIncome => logIncome(newIncome)} allIncome={allIncome}/>} />
           <Route path="/budget/compare" element={<Compare />} />
         </Route>
         <Route path="/funds" element={<Funds />} >

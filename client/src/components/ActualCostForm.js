@@ -51,13 +51,11 @@ export default function ActualCostForm(props) {
             />
         </label>
         <label>Who is Paying?:
-            <input 
-            type = "text"
-            name = "income_id"
-            value = {newActCost.income_id}
-            onChange = {handleChange}
-            required
-            />
+        <select name="income_id">
+          {props.allIncome.map(i => (
+            <option key={i.id} value={i.id}>{i.text}</option>
+          ))}
+        </select>
         </label>
         <label>Notes:
             <input 
