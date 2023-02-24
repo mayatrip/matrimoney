@@ -13,9 +13,6 @@ export default function Compare() {
         <Link to="/budget/compare" className="selected-second-nav">Compare</Link>
       </div>
       <div className="bottom-container">
-        <h3>
-          Compare
-        </h3>
       <div className="table-div">
         <div id="table-div-left">
           <h3>
