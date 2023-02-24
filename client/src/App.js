@@ -80,6 +80,14 @@ function App() {
     }
   }
 
+  const deleteIncome = async id => {
+  let uresponse = await MatrimoneyApi.deleteIncome(id);
+    if (uresponse.ok) {
+      setIncome(uresponse.data)
+    } else {
+      console.log(`Error! ${uresponse.error}`)
+    }
+  }
 
   return (
     <div className="App">
@@ -92,7 +100,7 @@ function App() {
         </Route>
         <Route path="/funds" element={<Funds />} >
           <Route index element={<FundsForm addIncomeCb={newIncome => addIncome(newIncome)}/>} />
-          <Route path="/funds/display" element={<FundsDisplay allIncome={allIncome} />} />
+          <Route path="/funds/display" element={<FundsDisplay allIncome={allIncome} deleteIncomeCb={id => deleteIncome(id)} />} />
         </Route>
       </Routes>
     </div>

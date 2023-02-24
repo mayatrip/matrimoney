@@ -21,7 +21,9 @@ export default function FundsDisplay(props) {
                   <tr key={i.id}>
                       <td>{i.text}</td>
                       <td>${i.amount}</td>
-                      <td>${i.amount - i.amount_used}</td>
+                      <td>${i.amount - i.amount_used}
+                      <button className="cursor-pointer" type="submit" onClick={e => props.deleteIncomeCb(i.id)}>x</button>
+                      </td>
                   </tr>
               ))}
           </tbody>
