@@ -27,7 +27,8 @@ export default function FundsForm(props) {
         <Link to="/funds/display" >View Funds</Link>
       </div>
       <div className="bottom-container">
-        <form onSubmit={handleSubmit}>
+        <h3>Add Funds</h3>
+        <form id="funds-form" onSubmit={handleSubmit}>
             <label>Source of Funds:
                 <input 
                 type = "text"
@@ -46,7 +47,9 @@ export default function FundsForm(props) {
                 required
                 />
             </label>
-            <button type="submit"  className="cursor-pointer">+</button>
+            <div>
+                <button type="submit"  className="cursor-pointer">+</button>
+            </div>
         </form>
       </div>
     </div>

@@ -125,10 +125,11 @@ td {
 }
 
 h4 {
-  margin-bottom:0px;
+  margin-bottom:5px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color:#0F0F0F;
+  margin-top:10px;
 }
 
 form {
@@ -136,7 +137,6 @@ form {
   grid-template-columns: 1fr 1fr 20px;
   justify-content: center;
   gap:20px;
-  margin-top:5px;
 }
 
 input{
@@ -203,3 +203,15 @@ td button:hover{
   align-self:center;
 }
 
+/* add funds page */
+#funds-form{
+  padding-top:30px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* funds display page */
+#funds-table {
+  width: 70%;
+  margin: 0 auto;
+}

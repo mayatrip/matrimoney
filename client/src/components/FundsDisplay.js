@@ -10,7 +10,7 @@ export default function FundsDisplay(props) {
       </div>
       <div className="bottom-container">
         <h3>All Funds</h3>
-        <table>
+        <table id="funds-table">
           <tbody>
             <tr>
                 <th>Source</th>
