@@ -26,27 +26,29 @@ export default function FundsForm(props) {
         <Link to="/funds" className="selected-second-nav">Add Funds</Link>
         <Link to="/funds/display" >View Funds</Link>
       </div>
+      <div className="bottom-container">
         <form onSubmit={handleSubmit}>
-        <label>Source of Funds:
-            <input 
-            type = "text"
-            name = "text"
-            value = {income.text}
-            onChange = {handleChange}
-            required
-            />
-        </label>
-        <label>Amount:
-            <input 
-            type = "text"
-            name = "amount"
-            value = {income.amount}
-            onChange = {handleChange}
-            required
-            />
-        </label>
-        <button type="submit"  className="cursor-pointer">+</button>
+            <label>Source of Funds:
+                <input 
+                type = "text"
+                name = "text"
+                value = {income.text}
+                onChange = {handleChange}
+                required
+                />
+            </label>
+            <label>Amount:
+                <input 
+                type = "text"
+                name = "amount"
+                value = {income.amount}
+                onChange = {handleChange}
+                required
+                />
+            </label>
+            <button type="submit"  className="cursor-pointer">+</button>
         </form>
+      </div>
     </div>
 
   )

@@ -8,21 +8,23 @@ export default function FundsDisplay(props) {
         <Link to="/funds" className="selected-second-nav">Add Funds</Link>
         <Link to="/funds/display" >View Funds</Link>
       </div>
-      <table>
-        <tbody>
-          <tr>
-              <th>Source</th>
-              <th>Amount</th>
-          </tr>
-            {props.allIncome.map(i => (
-                <tr key={i.id}>
-                    <td>{i.text}</td>
-                    <td>${i.amount}</td>
-                </tr>
-            ))}
-        </tbody>
-      </table>
-
+      <div className="bottom-container">
+        <h3>All Funds</h3>
+        <table>
+          <tbody>
+            <tr>
+                <th>Source</th>
+                <th>Amount</th>
+            </tr>
+              {props.allIncome.map(i => (
+                  <tr key={i.id}>
+                      <td>{i.text}</td>
+                      <td>${i.amount}</td>
+                  </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
