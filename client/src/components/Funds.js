@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./Funds.css";
 import logo from "../images/logo.png";
 import MatrimoneyApi from '../MatrimoneyApi.js';
@@ -29,23 +29,10 @@ export default function Funds() {
           <Link to="/funds" className="nav-link selected-link">Funds</Link>
         </div>
       </nav>
-      <h3>
+      <h2>
         My Funds:
-      </h3>
-        <table>
-          <tbody>
-            <tr>
-                <th>Source</th>
-                <th>Amount</th>
-            </tr>
-              {allIncome.map(i => (
-                  <tr key={i.id}>
-                      <td>{i.text}</td>
-                      <td>${i.amount}</td>
-                  </tr>
-              ))}
-          </tbody>
-        </table>
+      </h2>
+      <Outlet/>
     </div>
   )
 }
