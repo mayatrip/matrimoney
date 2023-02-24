@@ -10,8 +10,11 @@ export default function FundsForm(props) {
     const [income, setIncome] = useState(EMPTY_FORM);
 
     const handleChange = (event) => {
-      let { name, value } = event.target;
-      setIncome(income => ({...income, [name]: value }));
+        let { name, value } = event.target;
+        let incObj = {...income};
+        incObj[name] = value;
+        incObj.text = incObj.text.charAt(0).toUpperCase() + incObj.text.slice(1);
+        setIncome(income => incObj);
     }
   
     const handleSubmit = (event) => {

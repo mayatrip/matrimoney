@@ -10,7 +10,10 @@ export default function EstimatedCostForm(props) {
 
   const handleChange = (event) => {
     let { name, value } = event.target;
-    setEstCost(newEstCost => ({...newEstCost, [name]: value }));
+    let estObj = {...newEstCost};
+    estObj[name] = value;
+    estObj.text = estObj.text.charAt(0).toUpperCase() + estObj.text.slice(1);
+    setEstCost(newEstCost => estObj);
   }
 
   const handleSubmit = (event) => {

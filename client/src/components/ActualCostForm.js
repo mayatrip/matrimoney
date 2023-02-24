@@ -7,20 +7,15 @@ const EMPTY_FORM = {
     notes: ""
   }
 
-  const EMPTY_INCOME = {
-    income_id: "",
-    amount: ""
-  }
-
 export default function ActualCostForm(props) {
     const [newActCost, setActCost] = useState(EMPTY_FORM);
-    const [incomeObj, setIncomeObj] = useState({})
   
     const handleChange = (event) => {
       let { name, value } = event.target;
-      setActCost(newActCost => ({...newActCost, [name]: value }));
-      let newIncomeObj = {income_id: newActCost.income_id, amount: newActCost.amount};
-      setIncomeObj(incomeObj => newIncomeObj)
+      let actObj = {...newActCost};
+      actObj[name] = value;
+      actObj.text = actObj.text.charAt(0).toUpperCase() + actObj.text.slice(1);
+      setActCost(newActCost => actObj);
     }
   
     const handleSubmit = (event) => {
@@ -28,7 +23,6 @@ export default function ActualCostForm(props) {
       props.addCostCb(newActCost);
       props.setIncomeCb(newActCost);
       setActCost(EMPTY_FORM);
-      setIncomeObj(EMPTY_INCOME);
     }
   return (
     <form id="actual-cost-form" onSubmit={handleSubmit}>
