@@ -64,7 +64,7 @@ export default function ActualCost(props) {
         <div className="table-div">
             <div className="table-div-left">
             <h3>
-                {allIncome[0].amount}
+              Actual Costs:
             </h3>
             <table>
                 <tbody>

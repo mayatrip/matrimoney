@@ -49,9 +49,9 @@ export default function Compare() {
               </tr>
               {actualCosts.map(c => (
                 <tr key={c.id}>
-                  <td className="cursor-pointer">{c.text}</td>
-                  <td className="cursor-pointer">${c.amount}</td>
-                  <td className="cursor-pointer">{c.income_id}</td>
+                  <td>{c.text}</td>
+                  <td>${c.amount}</td>
+                  <td>{c.income_id}</td>
                 </tr>
               ))}
               <tr>
