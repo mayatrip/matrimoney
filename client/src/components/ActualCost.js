@@ -5,7 +5,7 @@ import ActualCostForm from './ActualCostForm.js';
 
 export default function ActualCost(props) {
 
-  const [actualCosts, setActCosts] = useOutletContext();
+  const {actualCosts, setActCosts, allIncome} = useOutletContext();
   const [selectedCost, setSelectedCost] = useState(null);
 
   // useEffect(() => {
@@ -64,7 +64,7 @@ export default function ActualCost(props) {
         <div className="table-div">
             <div className="table-div-left">
             <h3>
-                Actual Costs:
+                {allIncome[0].amount}
             </h3>
             <table>
                 <tbody>

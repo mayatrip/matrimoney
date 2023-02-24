@@ -2,8 +2,7 @@ import React from 'react';
 import { Link, useOutletContext } from "react-router-dom";
 
 export default function Compare() {
-  const [estimatedCosts, setEstCosts] = useOutletContext();
-  const [actualCosts, setActCosts] = useOutletContext();
+  const {estimatedCosts, setEstCosts, actualCosts, setActCosts} = useOutletContext();
 
   return (
     <div className='Compare'>

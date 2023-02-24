@@ -4,7 +4,7 @@ import EstimatedCostForm from './EstimatedCostForm';
 import { Link, useOutletContext } from "react-router-dom";
 
 export default function EstimatedCostDisplay() {
-  const [estimatedCosts, setEstCosts] = useOutletContext();
+  const {estimatedCosts, setEstCosts} = useOutletContext();
 
   const addCost = async newEstCost => {
     let uresponse = await MatrimoneyApi.addCostEstimate(newEstCost);

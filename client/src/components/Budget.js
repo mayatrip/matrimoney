@@ -4,9 +4,10 @@ import "./Budget.css";
 import logo from "../images/logo.png";
 import MatrimoneyApi from '../MatrimoneyApi';
 
-export default function Budget() {
+export default function Budget(props) {
   const [estimatedCosts, setEstCosts] = React.useState([]);
   const [actualCosts, setActCosts] = React.useState([]);
+  let allIncome = props.allIncome;
 
   useEffect(() => {
     getCostEstimate();
@@ -59,7 +60,7 @@ export default function Budget() {
         </div>
       </nav>
       <h2>My Budget</h2>
-      <Outlet context={[actualCosts, setActCosts, estimatedCosts, setEstCosts] }/>
+      <Outlet context={{actualCosts, setActCosts, estimatedCosts, setEstCosts, allIncome} }/>
     </div>
   )
 }
