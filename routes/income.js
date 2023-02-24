@@ -27,6 +27,22 @@ router.post('/', async function(req, res, next) {
   }
 })
 
+router.patch('/:id', async function(req, res, next) {
+  const id = req.params.id;
+  const changes = req.body;
+  let sql = `
+    UPDATE income
+    SET amount_used = ${changes.amount} WHERE id = ${id}
+  `;
+  try {
+    await db(sql);
+    let result = await db(`SELECT * FROM income`);
+    res.send(result.data)
+  } catch(err) {
+    res.status(500).send({error: err.message})
+  }
+})
+
 router.delete('/:id', async function(req, res, next){
   let id = req.params.id;
   try {
