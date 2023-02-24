@@ -3,10 +3,10 @@ import { Link, useOutletContext } from "react-router-dom";
 import MatrimoneyApi from '../MatrimoneyApi.js';
 import ActualCostForm from './ActualCostForm.js';
 
-export default function ActualCost() {
+export default function ActualCost(props) {
 
   const [actualCosts, setActCosts] = useOutletContext();
-  const [selectedCost, setSelectedCost] = useState(null)
+  const [selectedCost, setSelectedCost] = useState(null);
 
   // useEffect(() => {
   //   getCostActual();
@@ -50,6 +50,8 @@ export default function ActualCost() {
       console.log(`Error! ${uresponse.error}`)
     }
   }
+
+
 
   return (
     <div className='ActualCost'>
@@ -98,7 +100,7 @@ export default function ActualCost() {
                 </div>
                 }
             </div>
-            <ActualCostForm addCostCb={newActCost => addCost(newActCost)}/>
+            <ActualCostForm addCostCb={newActCost => addCost(newActCost)} setIncomeCb={incomeObj => props.setIncomeCb(incomeObj)}/>
         </div>
       </div>
     </div>
