@@ -112,7 +112,7 @@ a {
   margin: 0 auto;
   text-transform: uppercase;
   padding-top:15px;
-  padding-bottom:45px;
+  /* padding-bottom:45px; */
 }
 
 table {
@@ -125,7 +125,6 @@ td {
 }
 
 form {
-  margin-top:15px;
   display:grid;
   grid-template-columns: 1fr 1fr 20px;
   justify-content: center;
@@ -138,7 +137,6 @@ input{
 }
 
 form button {
-  align-self:self-end;
   border-radius: 15px;
   outline: none;
   border:1px solid #0f0f0f;
@@ -146,7 +144,10 @@ form button {
   font-weight:bold;
   vertical-align: middle;
   text-align: center;
-  padding:0px 2px 2px 2px;
+
+  margin-top:23px;
+  margin-right:10px;
+  padding:0px 5px 2px 5px;
 
 }
 
@@ -181,7 +182,6 @@ td button:hover{
 }
 
 #actual-cost-form {
-  margin-top:15px;
   display:grid;
   grid-template-columns: 1fr 1fr 40px;
   justify-content: center;
@@ -195,9 +195,3 @@ td button:hover{
   align-self:center;
 }
 
-#actual-cost-button {
-
-  margin-top:23px;
-  margin-right:10px;
-  padding:0px 5px 2px 5px;
-}

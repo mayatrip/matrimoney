@@ -39,7 +39,9 @@ export default function EstimatedCostForm(props) {
               required
               />
         </label>
-        <button type="submit"  className="cursor-pointer">+</button>
+        <div>
+        <button type="submit" className="cursor-pointer">+</button>
+        </div>
     </form>
   )
 }

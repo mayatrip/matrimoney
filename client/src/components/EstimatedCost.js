@@ -26,7 +26,7 @@ export default function EstimatedCostDisplay() {
 
   return (
     <div>
-    <div className="secondary-nav">
+      <div className="secondary-nav">
         <Link to="/budget" className="selected-second-nav">Estimated</Link>
         <Link to="/budget/costs" >Actual</Link>
         <Link to="/budget/compare" >Compare</Link>
@@ -57,7 +57,6 @@ export default function EstimatedCostDisplay() {
               </tr>
             </tbody>
           </table>
-          <EstimatedCostForm addCostCb={newEstCost => addCost(newEstCost)}/>
         </div>
         <div className="table-div-right">
           <h3>
@@ -95,10 +94,12 @@ export default function EstimatedCostDisplay() {
               </tr>
             </tbody>
           </table>
-          <p>
+        </div>
+
+        <EstimatedCostForm addCostCb={newEstCost => addCost(newEstCost)}/>
+        <p>
             *Recommendation based off of your budget and average breakdown of wedding costs
           </p>
-        </div>
         </div>
       </div>
     </div>
