@@ -124,11 +124,19 @@ td {
   border: 1px solid white;
 }
 
+h4 {
+  margin-bottom:0px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color:#0F0F0F;
+}
+
 form {
   display:grid;
   grid-template-columns: 1fr 1fr 20px;
   justify-content: center;
   gap:20px;
+  margin-top:5px;
 }
 
 input{

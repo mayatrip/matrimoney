@@ -83,6 +83,8 @@ export default function ActualCost(props) {
                     ))}
                 </tbody>
             </table>
+            <h4>Add Cost:</h4>
+            <ActualCostForm addCostCb={newActCost => addCost(newActCost)} setIncomeCb={incomeObj => props.setIncomeCb(incomeObj)}/>
             </div>
             <div>
                 <h3>
@@ -100,7 +102,6 @@ export default function ActualCost(props) {
                 </div>
                 }
             </div>
-            <ActualCostForm addCostCb={newActCost => addCost(newActCost)} setIncomeCb={incomeObj => props.setIncomeCb(incomeObj)}/>
         </div>
       </div>
     </div>

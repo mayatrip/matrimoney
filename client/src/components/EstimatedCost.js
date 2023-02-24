@@ -57,6 +57,8 @@ export default function EstimatedCostDisplay() {
               </tr>
             </tbody>
           </table>
+          <h4>Add Estimated Cost:</h4>
+          <EstimatedCostForm addCostCb={newEstCost => addCost(newEstCost)}/>
         </div>
         <div className="table-div-right">
           <h3>
@@ -94,12 +96,10 @@ export default function EstimatedCostDisplay() {
               </tr>
             </tbody>
           </table>
-        </div>
-
-        <EstimatedCostForm addCostCb={newEstCost => addCost(newEstCost)}/>
-        <p>
+          <p>
             *Recommendation based off of your budget and average breakdown of wedding costs
           </p>
+        </div>
         </div>
       </div>
     </div>
