@@ -77,7 +77,7 @@ export default function ActualCost(props) {
                     <tr key={c.id}>
                         <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{c.text}</td>
                         <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>${c.amount}</td>
-                        <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{c.income_id}</td>
+                        <td className="cursor-pointer" onClick={e => getOneCostActual(c.id)}>{(props.allIncome.find(i => i.id === c.income_id)).text}</td>
                         <td className="cursor-pointer" style ={{border: "none", width:10}}><button type="submit" onClick={e => deleteCostActual(c.id)}>x</button></td>
                     </tr>
                   ))}
