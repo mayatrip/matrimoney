@@ -51,6 +51,12 @@ export default function ActualCost(props) {
     }
   }
 
+  // const handleClick = (id) => {
+  //   let amountDeleted = (actualCosts.find(c => c.id === id)).amount;
+  //   deleteCostActual(id);
+  //   props.returnFundsCb(id, amountDeleted);
+  // }
+
 
 
   return (
