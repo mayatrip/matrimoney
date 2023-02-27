@@ -68,8 +68,8 @@ export default function ActualCost(props) {
         <Link to="/budget/compare" >Compare</Link>
       </div>
       <div className="bottom-container">
-        <div className="table-div">
-            <div className="table-div-left">
+      <div className="row justify-content-center">
+        <div className="col-5">
             <h3>
               Actual Costs:
             </h3>
@@ -101,7 +101,7 @@ export default function ActualCost(props) {
               allIncome={props.allIncome}
               />
             </div>
-            <div>
+            <div className="col-5">
                 <h3>
                     Notes:
                 </h3>
