@@ -35,7 +35,7 @@ export default function EstimatedCostForm(props) {
         </label>
         <label>Cost:
             <input 
-              type = "text"
+              type = "number"
               name = "amount"
               value = {newEstCost.amount}
               onChange = {handleChange}

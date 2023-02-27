@@ -43,7 +43,7 @@ export default function FundsForm(props) {
             </label>
             <label>Amount:
                 <input 
-                type = "text"
+                type = "number"
                 name = "amount"
                 value = {income.amount}
                 onChange = {handleChange}

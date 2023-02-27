@@ -37,7 +37,7 @@ export default function ActualCostForm(props) {
         </label>
         <label>Cost:
             <input 
-            type = "text"
+            type = "number"
             name = "amount"
             value = {newActCost.amount}
             onChange = {handleChange}
