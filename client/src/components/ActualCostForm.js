@@ -33,7 +33,7 @@ export default function ActualCostForm(props) {
         <div className="col">
         </div>
         <div className="col-5">
-          <label>Vendor Name:
+          <label>Expense Category:
             <input 
             type = "text"
             name = "text"

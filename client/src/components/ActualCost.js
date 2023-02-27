@@ -63,7 +63,7 @@ export default function ActualCost(props) {
             <table>
                 <tbody>
                   <tr>
-                    <th>Vendor</th>
+                    <th>Expense Category</th>
                     <th>Cost</th>
                     <th>Who is Paying?</th>
                   </tr>

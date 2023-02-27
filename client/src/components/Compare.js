@@ -20,7 +20,7 @@ export default function Compare(props) {
           <table>
             <tbody>
               <tr>
-                <th>Vendor</th>
+                <th>Expense Category</th>
                 <th>Cost</th>
               </tr>
               {estimatedCosts.map(c => (
@@ -43,7 +43,7 @@ export default function Compare(props) {
           <table>
             <tbody>
               <tr>
-                <th>Vendor</th>
+                <th>Expense Category</th>
                 <th>Cost</th>
                 <th>Who is Paying?</th>
               </tr>

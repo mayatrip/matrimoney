@@ -42,7 +42,7 @@ export default function EstimatedCostDisplay(props) {
           <table>
             <tbody>
               <tr>
-                <th>Vendor</th>
+                <th>Expense Category</th>
                 <th>Cost</th>
               </tr>
               {estimatedCosts.map(c => (
@@ -68,7 +68,7 @@ export default function EstimatedCostDisplay(props) {
           <table>
             <tbody>
               <tr>
-                <th>Vendor</th>
+                <th>Expense Category</th>
                 <th>Cost</th>
               </tr>
               <tr>
