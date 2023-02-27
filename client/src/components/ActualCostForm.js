@@ -9,11 +9,13 @@ const EMPTY_FORM = {
 
 export default function ActualCostForm(props) {
     const [newActCost, setActCost] = useState(EMPTY_FORM);
+    const [selected, setSelected] = useState("");
   
     const handleChange = (event) => {
       let { name, value } = event.target;
       let actObj = {...newActCost};
       actObj[name] = value;
+      setSelected(actObj.income_id);
       actObj.text = actObj.text.charAt(0).toUpperCase() + actObj.text.slice(1);
       setActCost(newActCost => actObj);
     }
@@ -23,6 +25,7 @@ export default function ActualCostForm(props) {
       props.addCostCb(newActCost);
       props.setIncomeCb(newActCost);
       setActCost(EMPTY_FORM);
+      setSelected("")
     }
   return (
     <form onSubmit={handleSubmit}>
@@ -60,7 +63,7 @@ export default function ActualCostForm(props) {
         </div>
         <div className="col-5">
           <label>Who is Paying?:
-            <select name="income_id" onChange={handleChange} required>
+            <select name="income_id" onChange={handleChange} required value={selected}>
               <option value="" selected disabled hidden>Choose from your funds</option>
               {props.allIncome.map(i => (
                 <option key={i.id} value={i.id} >{i.text}</option>

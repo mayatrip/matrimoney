@@ -42,14 +42,12 @@ function App() {
     let id = Number(newIncome.income_id);    
     let oldAmount = (allIncome.find(i => +i.id === +id));
     oldAmount = oldAmount.amount_used;
-    console.log(oldAmount);
     let totalAmount = 0;
     if (oldAmount){
       totalAmount = Number(oldAmount) + Number(newIncome.amount)
     } else {
       totalAmount = Number(newIncome.amount)
     }
-    console.log(totalAmount);
     let patchObj = {text: newIncome.text, amount: totalAmount};
     let uresponse = await MatrimoneyApi.changeIncome(id, patchObj);
     if (uresponse.ok){
