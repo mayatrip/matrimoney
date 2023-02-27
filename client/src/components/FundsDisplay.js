@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function FundsDisplay(props) {
   return (
-    <div>
+    <div className="FundsDisplay">
       <div className="secondary-nav">
         <Link to="/funds">Add Funds</Link>
         <Link to="/funds/display"  className="selected-second-nav">View Funds</Link>

@@ -5,14 +5,6 @@ import { Link, useOutletContext } from "react-router-dom";
 import EasyEdit, { Types } from 'react-easy-edit';
 
 export default function EstimatedCostDisplay(props) {
-  const save = (value) => {
-    alert(value);
-  };
-
-  const cancel = () => {
-    alert('Cancelled');
-  };
-
   const {estimatedCosts, setEstCosts} = useOutletContext();
   let totalIncome = props.allIncome.reduce(function (acc, obj) { return acc + obj.amount; }, 0);
 
@@ -35,7 +27,7 @@ export default function EstimatedCostDisplay(props) {
   }
 
   return (
-    <div>
+    <div className="EstimatedCost">
       <div className="secondary-nav">
         <Link to="/budget" className="selected-second-nav">Estimated</Link>
         <Link to="/budget/costs" >Actual</Link>

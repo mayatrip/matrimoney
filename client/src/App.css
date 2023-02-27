@@ -94,22 +94,6 @@ a {
   min-height:75vh;
 }
 
-/* .table-div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap:40px;
-  margin: 0 auto;
-  width:75%;
-} */
-
-/* .table-div-left p {
-  width: 75%;
-  margin: 0 auto;
-  text-transform: uppercase;
-  padding-top:15px;
-  padding-bottom:45px;
-} */
-
 table {
   width:100%;
   border: 3px solid white;
@@ -126,13 +110,6 @@ h4 {
   color:#0F0F0F;
   margin-top:10px;
 }
-
-/* form {
-  display:grid;
-  grid-template-columns: 1fr 1fr 20px;
-  justify-content: center;
-  gap:20px;
-} */
 
 label{
   width:100%;
@@ -152,9 +129,6 @@ form button {
   font-weight:bold;
   vertical-align: middle;
   text-align: center;
-  /* font-size: 24px; */
-
-  /* margin-top:23px; */
   margin-right:10px; 
   padding:0px 11px 0px 11px;
 
@@ -165,7 +139,6 @@ form button:hover{
 }
 
 td button {
-  /* margin-top:4px; */
   margin-right:5px;
   float:right;
   border-radius: 15px;
@@ -184,6 +157,11 @@ td button:hover{
 
 .cursor-pointer{
   cursor:pointer;
+}
+
+/* estimated costs page */
+.EstimatedCost p {
+  margin-bottom: 50px;
 }
 
 /* actual costs page */
@@ -217,7 +195,13 @@ option {
   cursor:auto;
 }
 
-/* add funds page */
+.actual-cost-form{
+  margin-bottom:50px;
+}
+
+.Compare table {
+  margin-bottom:50px;
+}
 
 /* funds display page */
 #funds-table {
@@ -239,4 +223,8 @@ option {
   text-transform: uppercase;
   font-size: 20px;
   letter-spacing: 0.1em;
+}
+
+.FundsDisplay table {
+  padding-bottom:50px;
 }

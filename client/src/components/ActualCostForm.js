@@ -28,7 +28,7 @@ export default function ActualCostForm(props) {
       setSelected("")
     }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="actual-cost-form">
       <div className="row justify-content-center  align-items-end">
         <div className="col">
         </div>
