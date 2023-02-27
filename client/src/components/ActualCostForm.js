@@ -26,47 +26,7 @@ export default function ActualCostForm(props) {
     }
   return (
     <form onSubmit={handleSubmit}>
-        {/* <label>Vendor Name:
-            <input 
-            type = "text"
-            name = "text"
-            value = {newActCost.text}
-            onChange = {handleChange}
-            required
-            />
-        </label>
-        <label>Cost:
-            <input 
-            type = "number"
-            name = "amount"
-            value = {newActCost.amount}
-            onChange = {handleChange}
-            required
-            />
-        </label>
-        <label>Who is Paying?:
-        <select name="income_id" onChange={handleChange} required>
-          <option value="" selected disabled hidden>Choose from your funds</option>
-          {props.allIncome.map(i => (
-            <option key={i.id} value={i.id} >{i.text}</option>
-          ))}
-        </select>
-        </label>
-        <label>Notes:
-            <input 
-            type = "text"
-            name = "notes"
-            value = {newActCost.notes}
-            onChange = {handleChange}
-            required
-            />
-        </label>
-        <div className="span-2-rows">
-        <button id="actual-cost-button" type="submit" className="cursor-pointer">+</button>
-        </div> */}
-
-
-        <div className="row justify-content-center  align-items-end">
+      <div className="row justify-content-center  align-items-end">
         <div className="col">
         </div>
         <div className="col-5">

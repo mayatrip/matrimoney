@@ -8,19 +8,6 @@ export default function ActualCost(props) {
   const {actualCosts, setActCosts} = useOutletContext();
   const [selectedCost, setSelectedCost] = useState(null);
 
-  // useEffect(() => {
-  //   getCostActual();
-  // }, [])
-
-  // async function getCostActual(){
-  //   let uresponse = await MatrimoneyApi.getCostActual();
-  //   if (uresponse.ok) {
-  //       setActCosts(uresponse.data);
-  //   } else {
-  //       console.log(`Error! ${uresponse.error}`)
-  //   }
-  // }
-
   async function getOneCostActual(id){
     let uresponse = await MatrimoneyApi.getOneCostActual(id);
     if (uresponse.ok){
