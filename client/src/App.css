@@ -13,28 +13,22 @@ div {
 }
 
 /* nav bar */
-nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.navbar {
+  margin: 0px 60px 10px 20px;
   text-align: left;
-  padding:30px 75px 0px 30px;
   letter-spacing: 0.1em;
   font-size:22px;
   text-transform:uppercase;
   position: relative;
+  padding-top:15px;
 }
 
 nav img {
-    width:40px;
+    width:50px;
     aspect-ratio: 1/1;
     object-fit:contain;
     vertical-align: middle;
-}
-
-#nav-right {
-  justify-self: right;
-  align-self:center;
-}
+} 
 
 .nav-link {
   margin-left: 20px;
@@ -47,6 +41,7 @@ nav img {
 
 .selected-link {
   font-weight: bolder;
+  text-shadow: 0.5px 0.5px 0.5px #7A3B69;
 }
 
 /* styling that applies to both budget and funds */
@@ -142,6 +137,7 @@ form {
 input{
   display:block;
   width:100%;
+  outline:none;
 }
 
 form button {

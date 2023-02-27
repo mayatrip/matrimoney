@@ -2,8 +2,17 @@ import React, { useState, useEffect } from 'react';
 import MatrimoneyApi from '../MatrimoneyApi.js';
 import EstimatedCostForm from './EstimatedCostForm';
 import { Link, useOutletContext } from "react-router-dom";
+import EasyEdit, { Types } from 'react-easy-edit';
 
 export default function EstimatedCostDisplay(props) {
+  const save = (value) => {
+    alert(value);
+  };
+
+  const cancel = () => {
+    alert('Cancelled');
+  };
+
   const {estimatedCosts, setEstCosts} = useOutletContext();
   let totalIncome = props.allIncome.reduce(function (acc, obj) { return acc + obj.amount; }, 0);
 

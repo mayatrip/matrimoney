@@ -51,13 +51,28 @@ export default function Budget() {
 
   return (
     <div className='Budget'>
-      <nav>
-        <Link to="/"  id="logo"><img src={logo} alt="Home"></img></Link>
-        <div id="nav-right">
-          <Link to="/budget" className="nav-link selected-link">Budget</Link>
-          <Link to="/funds" className="nav-link">Funds</Link>
+      <nav className="navbar navbar-expand-sm">
+        <div className="container-fluid">
+          <Link to="/"  id="logo"><img src={logo} alt="Home" className="navbar-brand"></img></Link>
+          <div className="justify-content-end">
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <Link to="/budget" className="nav-link selected-link">Budget</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/funds" className="nav-link">Funds</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </nav>
+      </nav> 
+
+
       <h2>My Budget</h2>
       <Outlet context={{actualCosts, setActCosts, estimatedCosts, setEstCosts} }/>
     </div>
