@@ -144,10 +144,6 @@ input{
   outline:none;
 }
 
-select{
-  width:100%;
-}
-
 form button {
   border-radius: 45px;
   outline: none;
@@ -195,6 +191,18 @@ td button:hover{
   border: 2px solid white;
   padding-bottom:15px;
 }
+select{
+  width:100%;
+  background:white;
+  border:1px solid rgb(153, 153, 153);
+  border-radius:2px;
+  height:35px;
+  letter-spacing: 0.05em;
+}
+
+option {
+  background-color: white;
+}
 
 .invis-button{
   outline:none;
@@ -219,4 +227,16 @@ td button:hover{
 
 .Funds td button {
   margin-top:4px;
+}
+
+.alert {
+  margin: 0 auto;
+  margin-top:20px;
+  background-color:#7A3B69;
+  opacity: 0.6;
+  color: white;
+  border-radius:10px;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 0.1em;
 }

@@ -14,10 +14,18 @@ import FundsForm from "./components/FundsForm.js";
 
 function App() {
   const [allIncome, setIncome] = React.useState([]);
+  const [visibleAlert, setAlertVisible] = useState(false);
 
   useEffect(() => {
     getIncome();
   }, []);
+
+  const handleVisible = () => {
+    setAlertVisible(true)
+    setTimeout(() => {
+        setAlertVisible(false)
+    }, 2000);
+} 
 
   async function getIncome(){
     let uresponse = await MatrimoneyApi.getIncome();
@@ -33,6 +41,7 @@ function App() {
     let uresponse = await MatrimoneyApi.addIncome(incomeObj);
     if (uresponse.ok){
       setIncome(uresponse.data);
+      handleVisible();
     } else{
       console.log(`Error! ${uresponse.error}`);
     }
@@ -98,7 +107,7 @@ function App() {
           <Route path="/budget/compare" element={<Compare allIncome={allIncome}/>} />
         </Route>
         <Route path="/funds" element={<Funds />} >
-          <Route index element={<FundsForm addIncomeCb={newIncome => addIncome(newIncome)}/>} />
+          <Route index element={<FundsForm visibleAlert={visibleAlert} addIncomeCb={newIncome => addIncome(newIncome)}/>} />
           <Route path="/funds/display" element={<FundsDisplay allIncome={allIncome} deleteIncomeCb={id => deleteIncome(id)} />} />
         </Route>
       </Routes>

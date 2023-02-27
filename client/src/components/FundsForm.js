@@ -60,6 +60,10 @@ export default function FundsForm(props) {
             </div>
           </div>
         </form>
+        {props.visibleAlert && <div className="alert col-10">
+            Funds added!
+          </div>
+        }
       </div>
     </div>
 
