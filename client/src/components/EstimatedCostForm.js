@@ -41,13 +41,13 @@ export default function EstimatedCostForm(props) {
         <div className="col-5">
           <label>Cost:
             <input 
-              type = "number"
+              type = "text"
               name = "amount"
               value = {newEstCost.amount}
               onChange = {handleChange}
               required
               />
-        </label>
+          </label>
         </div>
         <div className="col">
         <button type="submit" className="cursor-pointer">+</button>

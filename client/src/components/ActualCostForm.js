@@ -46,7 +46,7 @@ export default function ActualCostForm(props) {
         <div className="col-5">
           <label>Cost:
             <input 
-            type = "number"
+            type = "text"
             name = "amount"
             value = {newActCost.amount}
             onChange = {handleChange}
