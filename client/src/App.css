@@ -94,21 +94,21 @@ a {
   min-height:75vh;
 }
 
-.table-div {
+/* .table-div {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap:40px;
   margin: 0 auto;
   width:75%;
-}
+} */
 
-.table-div-left p {
+/* .table-div-left p {
   width: 75%;
   margin: 0 auto;
   text-transform: uppercase;
   padding-top:15px;
-  /* padding-bottom:45px; */
-}
+  padding-bottom:45px;
+} */
 
 table {
   width:100%;
@@ -133,6 +133,10 @@ h4 {
   justify-content: center;
   gap:20px;
 } */
+
+label{
+  width:100%;
+}
 
 input{
   display:block;

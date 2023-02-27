@@ -24,7 +24,11 @@ export default function EstimatedCostForm(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-        <label>Vendor Name:
+      <div className="row justify-content-center  align-items-end">
+        <div className="col">
+        </div>
+        <div className="col-5">
+          <label>Vendor Name:
             <input 
               type = "text"
               name = "text"
@@ -33,7 +37,9 @@ export default function EstimatedCostForm(props) {
               required
               />
         </label>
-        <label>Cost:
+        </div>
+        <div className="col-5">
+          <label>Cost:
             <input 
               type = "number"
               name = "amount"
@@ -42,9 +48,11 @@ export default function EstimatedCostForm(props) {
               required
               />
         </label>
-        <div>
+        </div>
+        <div className="col">
         <button type="submit" className="cursor-pointer">+</button>
         </div>
+      </div>
     </form>
   )
 }

@@ -42,8 +42,8 @@ export default function EstimatedCostDisplay(props) {
         <Link to="/budget/compare" >Compare</Link>
       </div>
       <div className="bottom-container">
-        <div className="table-div">
-        <div className="table-div-left">
+        <div className="row justify-content-center">
+        <div className="col-5">
           <h3>
             Estimated Costs:
           </h3>
@@ -69,7 +69,7 @@ export default function EstimatedCostDisplay(props) {
           <h4>Add Estimated Cost:</h4>
           <EstimatedCostForm addCostCb={newEstCost => addCost(newEstCost)}/>
         </div>
-        <div className="table-div-right">
+        <div className="col-5">
           <h3>
             Our Recommendations:*
           </h3>
@@ -142,6 +142,7 @@ export default function EstimatedCostDisplay(props) {
           </p>
         </div>
         </div>
+
       </div>
     </div>
   )
