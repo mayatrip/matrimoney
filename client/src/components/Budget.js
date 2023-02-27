@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Routes, Link, Outlet, useOutletContext } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Link, Outlet } from "react-router-dom";
 import "./Budget.css";
 import logo from "../images/logo.png";
 import MatrimoneyApi from '../MatrimoneyApi';
@@ -30,24 +30,6 @@ export default function Budget() {
         console.log(`Error! ${uresponse.error}`)
     }
   }
-
-  // const addCost = async newEstCost => {
-  //   let uresponse = await MatrimoneyApi.addCostEstimate(newEstCost);
-  //   if (uresponse.ok){
-  //     setEstCosts(uresponse.data);
-  //   } else{
-  //     console.log(`Error! ${uresponse.error}`);
-  //   }
-  // }
-
-  // const deleteCostEstimate = async id => {
-  //   let uresponse = await MatrimoneyApi.deleteCostEstimate(id);
-  //   if (uresponse.ok) {
-  //     setEstCosts(uresponse.data)
-  //   } else {
-  //     console.log(`Error! ${uresponse.error}`)
-  //   }
-  // }
 
   return (
     <div className='Budget'>

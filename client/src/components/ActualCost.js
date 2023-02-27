@@ -4,9 +4,11 @@ import MatrimoneyApi from '../MatrimoneyApi.js';
 import ActualCostForm from './ActualCostForm.js';
 
 export default function ActualCost(props) {
-
   const {actualCosts, setActCosts} = useOutletContext();
   const [selectedCost, setSelectedCost] = useState(null);
+
+  let totalIncome = props.allIncome.reduce(function (acc, obj) { return acc + obj.amount; }, 0);
+  let actualSum = actualCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0);
 
   async function getOneCostActual(id){
     let uresponse = await MatrimoneyApi.getOneCostActual(id);
@@ -77,7 +79,11 @@ export default function ActualCost(props) {
                   ))}
                   <tr>
                     <td>Total:</td>
-                    <td>${actualCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0)}</td>
+                    <td>${actualSum}</td>
+                  </tr>
+                  <tr>
+                    <td>Remaining:</td>
+                    <td>${totalIncome - actualSum}</td>
                   </tr>
                 </tbody>
             </table>

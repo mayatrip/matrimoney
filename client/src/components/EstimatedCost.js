@@ -7,6 +7,7 @@ import EasyEdit, { Types } from 'react-easy-edit';
 export default function EstimatedCostDisplay(props) {
   const {estimatedCosts, setEstCosts} = useOutletContext();
   let totalIncome = props.allIncome.reduce(function (acc, obj) { return acc + obj.amount; }, 0);
+  let estimatedSum = estimatedCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0);
 
   const addCost = async newEstCost => {
     let uresponse = await MatrimoneyApi.addCostEstimate(newEstCost);
@@ -54,7 +55,12 @@ export default function EstimatedCostDisplay(props) {
               ))}
               <tr>
                 <td>Total:</td>
-                <td style={{borderRight:"none"}}>${estimatedCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0)}</td>
+                <td style={{borderRight:"none"}}>${estimatedSum}</td>
+              </tr>
+              <tr>
+                <td>Remaining:</td>
+                <td style={{borderRight:"none"}}>${totalIncome - estimatedSum}</td>
+                <td style={{borderLeft:"none"}}></td>
               </tr>
             </tbody>
           </table>

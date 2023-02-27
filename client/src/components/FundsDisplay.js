@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 export default function FundsDisplay(props) {
+  let incomeSum = props.allIncome.reduce(function (acc, obj) { return acc + obj.amount; }, 0);
+  let spentSum = props.allIncome.reduce(function (acc, obj) { return acc + obj.amount_used; }, 0);
   return (
     <div className="FundsDisplay">
       <div className="secondary-nav">
@@ -28,7 +30,10 @@ export default function FundsDisplay(props) {
               ))}
             <tr>
               <td>Total:</td>
-              <td>${props.allIncome.reduce(function (acc, obj) { return acc + obj.amount; }, 0)}</td>
+              <td>${incomeSum}</td>
+              <td>${incomeSum - spentSum}
+                <button className="cursor-pointer invis-button" type="button"></button>
+              </td>
             </tr>
           </tbody>
         </table>
