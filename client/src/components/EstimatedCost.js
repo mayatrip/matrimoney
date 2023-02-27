@@ -56,14 +56,13 @@ export default function EstimatedCostDisplay(props) {
               {estimatedCosts.map(c => (
                 <tr key={c.id}>
                   <td>{c.text}</td>
-                  <td>${c.amount}
-                    <button className="cursor-pointer" type="submit" onClick={e => deleteCostEstimate(c.id)}>x</button>
-                  </td>
+                  <td style={{borderRight:"none"}}>${c.amount}</td>
+                  <td className="cursor-pointer" style ={{borderLeft: "none", width:10}}><button type="submit" onClick={e => deleteCostEstimate(c.id)}>x</button></td>
                 </tr>
               ))}
               <tr>
                 <td>Total:</td>
-                <td>${estimatedCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0)}</td>
+                <td style={{borderRight:"none"}}>${estimatedCosts.reduce(function (acc, obj) { return acc + obj.amount; }, 0)}</td>
               </tr>
             </tbody>
           </table>

@@ -32,7 +32,7 @@ export default function FundsForm(props) {
       <div className="bottom-container">
         <h3>Add Funds</h3>
         <form id="funds-form" onSubmit={handleSubmit}>
-            <label>Source of Funds:
+          {/* <label>Source of Funds:
                 <input 
                 type = "text"
                 name = "text"
@@ -43,16 +43,43 @@ export default function FundsForm(props) {
             </label>
             <label>Amount:
                 <input 
-                type = "number"
-                name = "amount"
-                value = {income.amount}
-                onChange = {handleChange}
-                required
+                  type = "number"
+                  name = "amount"
+                  value = {income.amount}
+                  onChange = {handleChange}
+                  required
                 />
-            </label>
+              </label>
             <div>
                 <button type="submit"  className="cursor-pointer">+</button>
-            </div>
+            </div> */}
+
+            <div class="row g-3 justify-content-center  align-items-end">
+              <div className="col-1"></div>
+  <div class="col-4">
+    Source of funds:
+  <input 
+                type = "text"
+                name = "text"
+                value = {income.text}
+                onChange = {handleChange}
+                required
+                />  </div>
+  <div class="col-4">
+    Amount:
+  <input 
+                  type = "number"
+                  name = "amount"
+                  value = {income.amount}
+                  onChange = {handleChange}
+                  required
+                />  </div>
+
+<div className="col-1">
+<button type="submit"  className="cursor-pointer">+</button>
+
+</div>
+</div>
         </form>
       </div>
     </div>
