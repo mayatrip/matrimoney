@@ -12,8 +12,8 @@ export default function Compare(props) {
         <Link to="/budget/compare" className="selected-second-nav">Compare</Link>
       </div>
       <div className="bottom-container">
-      <div className="table-div">
-        <div id="table-div-left">
+      <div className="row justify-content-center">
+        <div className="col-5">
           <h3>
             Estimated Costs:
           </h3>
@@ -36,7 +36,7 @@ export default function Compare(props) {
             </tbody>
           </table>
         </div>
-        <div className="table-div-right">
+        <div className="col-5">
           <h3>
             Actual Costs:
           </h3>
