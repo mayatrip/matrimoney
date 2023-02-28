@@ -37,7 +37,6 @@ function App() {
   }
 
   async function addIncome(incomeObj){
-    console.log(incomeObj)
     let uresponse = await MatrimoneyApi.addIncome(incomeObj);
     if (uresponse.ok){
       setIncome(uresponse.data);
@@ -68,16 +67,13 @@ function App() {
 
   async function returnFunds(id, amountDeleted){
     let oldAmtUsed = (allIncome.find(i => +i.id === +id));
-    console.log(oldAmtUsed);
     oldAmtUsed = oldAmtUsed.amount_used;
-    console.log(oldAmtUsed);
     let totalAmtUsed = 0;
     if (oldAmtUsed){
       totalAmtUsed = Number(oldAmtUsed) - Number(amountDeleted)
     } else {
       totalAmtUsed = 0 - Number(amountDeleted)
     } 
-    console.log(totalAmtUsed);
     let patchObj = {amount: totalAmtUsed};
     let uresponse = await MatrimoneyApi.changeIncome(id, patchObj);
     if (uresponse.ok){

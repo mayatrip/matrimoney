@@ -32,10 +32,10 @@ export default function FundsForm(props) {
       <div className="bottom-container">
         <h3>Add Funds</h3>
         <form id="funds-form" onSubmit={handleSubmit}>
-          <div class="row g-3 justify-content-center  align-items-end">
+          <div className="row g-3 justify-content-center  align-items-end">
             <div className="col-1">
             </div>
-            <div class="col-4">
+            <div className="col-4">
               Source of funds:
               <input 
                 type = "text"
@@ -45,7 +45,7 @@ export default function FundsForm(props) {
                 required
                 />  
             </div>
-            <div class="col-4">
+            <div className="col-4">
               Amount:
               <input 
                 type = "number"
