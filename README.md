@@ -12,7 +12,7 @@
 ```bash
   DB_HOST=localhost
   DB_USER=root
-  DB_NAME=facebook
+  DB_NAME=matrimoney
   DB_PASS=YOURPASSWORD
 ```
 - To change the initital db setup in mysql, look at ./model/init_db.sql
