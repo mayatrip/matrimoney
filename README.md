@@ -4,6 +4,7 @@
 
 - Run `npm install` in project directory. This will install server-related dependencies such as `express`.
 - `cd client` and run `npm install`. This will install client dependencies (React).
+- in the client project folder, run `npm install react-router-dom` to install React Router for the project
 
 ### Database Prep
 
@@ -15,7 +16,7 @@
   DB_NAME=matrimoney
   DB_PASS=YOURPASSWORD
 ```
-- To change the initital db setup in mysql, look at ./model/init_db.sql
+- To change the initial db setup in mysql, look at ./model/init_db.sql
 - Run `npm run migrate` in the project folder of this repository, in a new terminal window. This will create a table called 'income' in your database.
 
 ### Development
