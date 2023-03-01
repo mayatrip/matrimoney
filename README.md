@@ -1,3 +1,7 @@
+## Description
+
+Matrimoney is an app to help plan your wedding finances. It helps you not only keep track of your spending, but also gives you an idea of where to allocate your funds and plan how you will spend.
+
 ## Setup
 
 ### Dependencies
