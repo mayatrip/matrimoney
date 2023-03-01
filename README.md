@@ -12,6 +12,8 @@ Matrimoney is an app to help plan your wedding finances. It helps you not only k
 
 ### Database Prep
 
+- Access the MySQL interface in your terminal
+- Create a new database called matrimoney (or whatever you'd like): `create database matrimoney`
 - Add a `.env` file to the project folder of this repository containing the MySQL authentication information for MySQL user. For example:
 
 ```bash
