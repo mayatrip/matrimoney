@@ -34,5 +34,5 @@ CREATE TABLE cost_actual (
 
 ); 
  
-INSERT INTO cost_estimate (text, amount)  
+INSERT INTO cost_actual (text, amount)  
     VALUES ("Venue", 10000, "Our point person is Dana", 1), ("Food", 5000, "Olive Wood Pizza", 2), ("Music", 2000, "James Harper Band", 3);
